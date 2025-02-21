@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Animator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="action" id="buttons">
+        <label for="bg-image">Background Image</label>
+        <input type="file" accept="image/*" id="bg-image">
+        <label for="fileInput">Upload Image</label>
+        <input type="file" accept="image/*" id="fileInput">
+
+        <div class="animate-checkbox">
+            <div class="animate-checkbox-label">Shake image</div>
+            <input type="checkbox" class="checkedBox" id="checkedBox">
+        </div>
+
+        <div class="transform-rows-container" id="transform-rows-container">
+        </div>
+        <button class="add-new-transform" id="add-new-transform" onclick="addNewAnimationHandler()">
+            Add new animation
+        </button>
+        
+        <button class="upload-btn" onclick="uploadHandler()">Start Video</button>
+    </div>
+
+    <img class="img2" id="img" src="">
+
+    <div class="img img1">
+        <img id="uploaded-img" class="uploaded-img animate" src="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
