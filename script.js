@@ -29,6 +29,17 @@ function uploadHandler() {
             } else {
                 imgEl.classList.add('animate');
             }
+
+            let appearCheckbox = document.getElementById("appear-checkbox");
+            if(appearCheckbox.checked) {
+                let imageContainer = document.getElementById("uploaded-img-container");
+                imageContainer.classList.add('blink');
+                imgEl.classList.add("appear-animation");
+            } else {
+                imageContainer.classList.remove('blink');
+                imgEl.classList.remove("appear-animation");
+            }
+            
             imgEl.src = imageSrc;
             imgEl.style.display = 'none';
             animationsHandler();
