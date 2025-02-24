@@ -31,8 +31,8 @@ function uploadHandler() {
             }
 
             let appearCheckbox = document.getElementById("appear-checkbox");
+            let imageContainer = document.getElementById("uploaded-img-container");
             if(appearCheckbox.checked) {
-                let imageContainer = document.getElementById("uploaded-img-container");
                 imageContainer.classList.add('blink');
                 imgEl.classList.add("appear-animation");
             } else {
