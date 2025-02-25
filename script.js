@@ -22,7 +22,22 @@ function uploadHandler() {
         reader.readAsDataURL(file);
         reader.onloadend = function () {
             const imageSrc = reader.result;
-            const imgEl = document.getElementById('uploaded-img');
+            let imageContainer = document.getElementById("uploaded-img-container");
+            let imgEl = document.getElementById('uploaded-img');
+
+            // Curtain Effect
+            let curtainCheckbox = document.getElementById("curtain-effect");
+            let curtainBox = document.getElementById("rxWorld");
+            if(curtainCheckbox.checked) {
+                imageContainer.remove();
+                curtainBox.style.display = 'block';
+                let curtainTopEl = document.getElementById("curtain-position-top");
+                let rnInnerEl = document.getElementById("rnInner");
+                rnInnerEl.style.top = `${curtainTopEl.value}%`;
+                imgEl = document.getElementById('uploaded-img');
+            }
+
+            // Shake Image
             let checkbox = document.getElementById("checkedBox");
             if (!checkbox.checked) {
                 imgEl.classList.remove('animate');
@@ -30,8 +45,8 @@ function uploadHandler() {
                 imgEl.classList.add('animate');
             }
 
+            // Appear With Effect
             let appearCheckbox = document.getElementById("appear-checkbox");
-            let imageContainer = document.getElementById("uploaded-img-container");
             if(appearCheckbox.checked) {
                 imageContainer.classList.add('blink');
                 imgEl.classList.add("appear-animation");
