@@ -276,10 +276,10 @@ label {
     bottom: 0;
     left: 0;
     margin: auto;
+    background-color: #cecece;
     transform-style: preserve-3d;
     transition: transform 6s ease;
     transform-origin: -120% top;
-
 }
 
 .rnUnit {
