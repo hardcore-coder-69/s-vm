@@ -31,16 +31,24 @@
         </div>
         <input type="number" placeholder="curtain position top (10%)" class="curtain-position-top" id="curtain-position-top">
 
+        <div class="transform-rows-container" id="transform-bgrows-container">
+        </div>
+        <button class="add-new-transform" id="add-newbg-transform" onclick="addNewBGAnimationHandler()">
+            &plus; Add BG animation
+        </button>
+        
         <div class="transform-rows-container" id="transform-rows-container">
         </div>
         <button class="add-new-transform" id="add-new-transform" onclick="addNewAnimationHandler()">
-            &plus; Add new animation
+            &plus; Add image animation
         </button>
 
         <button class="upload-btn" onclick="uploadHandler()">Start Video</button>
     </div>
 
-    <img class="img2" id="img" src="">
+    <div class="bg-image-container" id="bg-image-container">
+        <img class="img2" id="img" src="">
+    </div>
 
     <div class="img img1" id="uploaded-img-container">
         <img id="uploaded-img" class="uploaded-img" src="">
