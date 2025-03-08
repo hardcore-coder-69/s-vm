@@ -120,8 +120,12 @@ label {
     width: 60%;
 }
 
+/* .appear-animation {
+    animation: appearAnimation 5s ease-in-out;
+} */
+
 .appear-animation {
-    animation: appearAnimation 5s;
+    animation: appearAnimation 3s ease-in-out;
 }
 
 .blink {
