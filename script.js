@@ -50,10 +50,10 @@ function uploadHandler() {
             // Appear With Effect
             let appearCheckbox = document.getElementById("appear-checkbox");
             if(appearCheckbox.checked) {
-                imageContainer.classList.add('blink');
+                // imageContainer.classList.add('blink');
                 imgEl.classList.add("appear-animation");
             } else {
-                imageContainer.classList.remove('blink');
+                // imageContainer.classList.remove('blink');
                 imgEl.classList.remove("appear-animation");
             }
             

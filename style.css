@@ -121,7 +121,7 @@ label {
 }
 
 .appear-animation {
-    animation: appearAnimation 8s;
+    animation: appearAnimation 5s;
 }
 
 .blink {
