@@ -67,8 +67,16 @@ function uploadHandler() {
 async function imageAnimationsHandler() {
     const imgEl = document.getElementById('uploaded-img');
     imgEl.style.display = 'block';
-    const transformRowsContainerEl = document.getElementById("transform-rows-container");
 
+    const imageStylesEl = document.getElementById("imageStyles");
+    if(imageStylesEl.value) {
+        let oldStyles = imgEl.getAttribute("style");
+        let updatedStyles = oldStyles + imageStylesEl.value;
+        console.log(updatedStyles);
+        imgEl.setAttribute("style", updatedStyles);
+    }
+
+    const transformRowsContainerEl = document.getElementById("transform-rows-container");
     const animationRows = Array.from(transformRowsContainerEl.getElementsByClassName('new-row'));
     if(animationRows.length <= 0) return;
 

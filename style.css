@@ -120,6 +120,11 @@ label {
     width: 60%;
 }
 
+.imageStyles {
+    font-size: 18px;
+    width: 300px;
+}
+
 /* .appear-animation {
     animation: appearAnimation 5s ease-in-out;
 } */
