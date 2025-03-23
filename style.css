@@ -130,7 +130,7 @@ label {
 } */
 
 .appear-animation {
-    animation: appearAnimation 3s ease-in-out;
+    animation: appearAnimation 6s ease-in-out;
 }
 
 .blink {
