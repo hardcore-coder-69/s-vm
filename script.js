@@ -1,4 +1,4 @@
-function uploadHandler() {
+async function uploadHandler() {
     const fileInput = document.getElementById('fileInput');
     const bgImageEl = document.getElementById('bg-image');
     const buttons = document.getElementById('buttons');
@@ -22,7 +22,7 @@ function uploadHandler() {
     if (file) {
         const reader = new FileReader();
         reader.readAsDataURL(file);
-        reader.onloadend = function () {
+        reader.onloadend = async function () {
             const imageSrc = reader.result;
             let imageContainer = document.getElementById("uploaded-img-container");
             let imgEl = document.getElementById('uploaded-img');
@@ -51,6 +51,7 @@ function uploadHandler() {
             let appearCheckbox = document.getElementById("appear-checkbox");
             if(appearCheckbox.checked) {
                 // imageContainer.classList.add('blink');
+                await sleep(2);
                 imgEl.classList.add("appear-animation");
             } else {
                 // imageContainer.classList.remove('blink');
