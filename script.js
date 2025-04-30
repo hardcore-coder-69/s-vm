@@ -30,7 +30,7 @@ async function uploadHandler() {
             // Curtain Effect
             let curtainCheckbox = document.getElementById("curtain-effect");
             let curtainBox = document.getElementById("rxWorld");
-            if(curtainCheckbox.checked) {
+            if(curtainCheckbox && curtainCheckbox.checked) {
                 imageContainer.remove();
                 curtainBox.style.display = 'block';
                 let curtainTopEl = document.getElementById("curtain-position-top");
@@ -56,6 +56,16 @@ async function uploadHandler() {
             } else {
                 // imageContainer.classList.remove('blink');
                 imgEl.classList.remove("appear-animation");
+            }
+
+            // Burning Image
+            let burningCheckbox = document.getElementById("burning-checkbox");
+            if (!burningCheckbox.checked) {
+                imageContainer.classList.remove('burning-parent');
+                imgEl.classList.remove('burning-animation');
+            } else {
+                imageContainer.classList.add('burning-parent');
+                imgEl.classList.add('burning-animation');
             }
             
             imgEl.src = imageSrc;
