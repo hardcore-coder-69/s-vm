@@ -113,7 +113,7 @@ label {
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: radial-gradient(circle at center, rgba(255, 80, 0, 0.4), transparent);
+    background: radial-gradient(circle at center, rgba(112, 102, 255, 0.4), transparent);
     animation: glow-flicker .1s infinite ease-in-out;
     z-index: 0;
     pointer-events: none;
