@@ -70,6 +70,10 @@ label {
     animation: myAnimation .3s infinite;
 }
 
+.burning-parent {
+    animation: myAnimation .1s infinite;
+}
+
 .burning-animation {
     width: 300px;
     height: auto;
