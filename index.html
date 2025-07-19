@@ -12,10 +12,12 @@
     <div class="action" id="buttons">
         <label for="bg-image">Background Image</label>
         <input type="file" accept="image/*" id="bg-image">
-        <textarea id="bgImageStyles" name="bgImageStyles" class="bgImageStyles" placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea><br>
+        <textarea id="bgImageStyles" name="bgImageStyles" class="bgImageStyles"
+            placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea><br>
         <label for="fileInput">Upload Image</label>
         <input type="file" accept="image/*" id="fileInput">
-        <textarea id="imageStyles" name="imageStyles" class="imageStyles" placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea><br>
+        <textarea id="imageStyles" name="imageStyles" class="imageStyles"
+            placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea><br>
 
         <div class="animate-checkbox">
             <div class="animate-checkbox-label">Shake image</div>
@@ -43,12 +45,15 @@
         <button class="add-new-transform" id="add-newbg-transform" onclick="addNewBGAnimationHandler()">
             &plus; Add BG animation
         </button>
-        
+
         <div class="transform-rows-container" id="transform-rows-container">
         </div>
         <button class="add-new-transform" id="add-new-transform" onclick="addNewAnimationHandler()">
             &plus; Add image animation
         </button>
+
+        <label for="audio-upload">Upload Audio</label>
+        <input type="file" id="audio-upload" accept="audio/*" />
 
         <button class="upload-btn" onclick="uploadHandler()">Start Video</button>
     </div>
@@ -84,6 +89,8 @@
             </div>
         </section>
     </div>
+
+    <audio id="uploaded-audio" loop></audio>
 
     <script src="script.js"></script>
 </body>

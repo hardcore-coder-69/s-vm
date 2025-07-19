@@ -6,7 +6,8 @@ body {
 }
 
 #fileInput,
-#bg-image {
+#bg-image,
+#audio-upload {
     display: none;
 }
 

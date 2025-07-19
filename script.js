@@ -73,6 +73,9 @@ async function uploadHandler() {
             imageAnimationsHandler();
         };
     }
+
+
+    playUploadedAudio();
 }
 
 async function imageAnimationsHandler() {
@@ -170,6 +173,18 @@ function addNewBGAnimationHandler() {
     divEl.remove();
     animationRowCount++;
 }
+
+function playUploadedAudio() {
+    const fileInput = document.getElementById('audio-upload');
+    const audioElement = document.getElementById('uploaded-audio');
+    const file = fileInput.files[0];
+
+    if (file) {
+      const audioURL = URL.createObjectURL(file);
+      audioElement.src = audioURL;
+      audioElement.play();
+    }
+  }
 
 function sleep(s) {
     return new Promise(resolve => setTimeout(resolve, s * 1000));
