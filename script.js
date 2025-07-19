@@ -138,7 +138,7 @@ async function bgAnimationsHandler() {
         
         await sleep(0);
         console.log(animation, duration);
-        imgEl.style.transition = `transform ${duration}s ease-in-out`;
+        imgEl.style.transition = `transform ${duration}s linear`;
         imgEl.style.transform = animation;
         await sleep(duration);
     }
