@@ -190,6 +190,11 @@ label {
     width: 300px;
 }
 
+.bgImageStyles {
+    font-size: 18px;
+    width: 300px;
+}
+
 /* .appear-animation {
     animation: appearAnimation 5s ease-in-out;
 } */

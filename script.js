@@ -126,8 +126,15 @@ function addNewAnimationHandler() {
 async function bgAnimationsHandler() {
     const imgEl = document.getElementById('img');
     imgEl.style.display = 'block';
-    const transformRowsContainerEl = document.getElementById("transform-bgrows-container");
 
+    const imageStylesEl = document.getElementById("bgImageStyles");
+    if(imageStylesEl.value) {
+        let oldStyles = imgEl.getAttribute("style");
+        let updatedStyles = oldStyles + imageStylesEl.value;
+        imgEl.setAttribute("style", updatedStyles);
+    }
+    
+    const transformRowsContainerEl = document.getElementById("transform-bgrows-container");
     const animationRows = Array.from(transformRowsContainerEl.getElementsByClassName('new-bg-row'));
     if(animationRows.length <= 0) return;
 
