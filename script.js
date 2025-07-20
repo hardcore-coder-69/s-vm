@@ -9,7 +9,7 @@ async function startVideoHandler() {
 async function hookTextHandler() {
     let hookTextEl = document.getElementById('hookText');
     let hookText = hookTextEl.value;
-    if(!hookText) return;
+    if (!hookText) return;
     const buttons = document.getElementById('buttons');
     buttons.style.display = 'none';
     await sleep(3);
@@ -17,7 +17,7 @@ async function hookTextHandler() {
 
     let hookTextContainerEl = document.getElementById('hookTextContainer');
     let words = hookText.split(' ').map(w => w.trim());
-    for(let i = 0; i < words.length; i++) {
+    for (let i = 0; i < words.length; i++) {
         await sleep(0.5);
         shockedSoundEffectEl.currentTime = 0;
         shockedSoundEffectEl.play();
@@ -103,8 +103,20 @@ async function uploadHandler() {
         };
     }
 
+    appearHandler();
+}
 
-    playUploadedAudio();
+async function appearHandler() {
+    const appearInputEl = document.getElementById('appear-input');
+    if (appearInputEl) {
+        let appearAfterTime = appearInputEl.value;
+        setTimeout(() => {
+            const videoContainerEl = document.getElementById('video-container');
+            videoContainerEl.style.opacity = 'unset';
+            videoContainerEl.style.animation = 'appearAnimation 5s';
+            playUploadedAudio();
+        }, appearAfterTime * 1000);
+    }
 }
 
 async function imageAnimationsHandler() {
@@ -117,11 +129,6 @@ async function imageAnimationsHandler() {
         let updatedStyles = oldStyles + imageStylesEl.value;
         console.log(updatedStyles);
         imgEl.setAttribute("style", updatedStyles);
-    }
-
-    const appearVideoEl = document.getElementById('appear-video');
-    if(appearVideoEl && appearVideoEl.checked) {
-        
     }
 
     const transformRowsContainerEl = document.getElementById("transform-rows-container");

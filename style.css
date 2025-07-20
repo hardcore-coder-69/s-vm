@@ -425,7 +425,7 @@ textarea {
         opacity: 0.8;
     }
 
-    82.5% {
+    /* 82.5% {
         opacity: 0.825;
     }
 
@@ -451,7 +451,7 @@ textarea {
 
     97.5% {
         opacity: 0.975;
-    }
+    } */
 
     100% {
         opacity: 1;
@@ -495,11 +495,16 @@ textarea {
     justify-content: center;
 }
 
-.appear-video-label {
+/* .appear-video-label {
     font-size: 28px;
+} */
+
+.appear-input {
+    font-size: 24px;
+    padding: 10px;
 }
 
-.appear-video {
-    height: 40px;
-    width: 40px;
+
+.video-container {
+    opacity: 0;
 }
