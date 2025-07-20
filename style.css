@@ -46,7 +46,7 @@ label {
 }
 
 .img {
-    height: 100vh;
+    height: calc(100vh - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,11 +59,13 @@ label {
 
 .img1 {
     position: absolute;
-    top: 0;
+    height: calc(100vh - 200px);
+    top: 200px;
+    overflow: hidden;
 }
 
 .uploaded-img {
-    height: 95vh;
+    height: calc(100vh - 200px);
     width: auto;
 }
 
@@ -174,7 +176,9 @@ label {
 
 .bg-image-container {
     position: absolute;
-    height: 100vh;
+    height: calc(100vh - 200px);
+    top: 200px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -495,9 +499,18 @@ textarea {
     justify-content: center;
 }
 
-/* .appear-video-label {
-    font-size: 28px;
-} */
+.video-text-input-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-text-input {
+    font-size: 18px;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 .appear-input {
     font-size: 24px;
@@ -507,4 +520,24 @@ textarea {
 
 .video-container {
     opacity: 0;
+}
+
+
+.text-container {
+    margin-top: 40px;
+    height: 130px;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+
+    display: none;
+}
+
+.video-text {
+    text-align: center;
 }

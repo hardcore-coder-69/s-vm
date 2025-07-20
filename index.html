@@ -53,13 +53,21 @@
         <input type="file" id="audio-upload" accept="audio/*" />
 
         <div class="appear-video-container">
-            <input type="number" placeholder="Appear after(s)" class="appear-input" id="appear-input">
+            <input type="number" placeholder="Appear after(s)" class="appear-input" id="appear-input" >
+        </div>
+
+        <div class="video-text-input-container">
+            <textarea type="text" placeholder="Video text on top" class="video-text-input" id="video-text-input" cols="40"></textarea>
         </div>
         
         <button class="upload-btn" onclick="startVideoHandler()">Start Video</button>
     </div>
 
     <div class="video-container" id="video-container">
+        <div class="text-container" id="text-container">
+            <div class="video-text" id="video-text"></div>
+        </div>
+        
         <div class="bg-image-container" id="bg-image-container">
             <img class="img2" id="img" src="">
         </div>

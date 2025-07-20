@@ -103,6 +103,7 @@ async function uploadHandler() {
         };
     }
 
+    addVideoText();
     appearHandler();
 }
 
@@ -116,6 +117,16 @@ async function appearHandler() {
             videoContainerEl.style.animation = 'appearAnimation 5s';
             playUploadedAudio();
         }, appearAfterTime * 1000);
+    }
+}
+
+async function addVideoText() {
+    const videoTextInputEl = document.getElementById('video-text-input');
+    if(videoTextInputEl && videoTextInputEl.value) {
+        const videoTextEl = document.getElementById('video-text');
+        const textContainerEl = document.getElementById('text-container');
+        textContainerEl.style.display = 'flex';
+        videoTextEl.innerText = videoTextInputEl.value;
     }
 }
 
@@ -168,6 +179,7 @@ function addNewAnimationHandler() {
 }
 
 async function bgAnimationsHandler() {
+    const bgImgEl = document.getElementById('bg-image-container');
     const imgEl = document.getElementById('img');
     imgEl.style.display = 'block';
 
