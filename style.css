@@ -173,6 +173,7 @@ label {
 }
 
 .bg-image-container {
+    position: absolute;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -483,4 +484,22 @@ textarea {
         transform: translate(0px, 0px);
         /* transform: translateY(0px); */
     }
+}
+
+
+
+.appear-video-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appear-video-label {
+    font-size: 28px;
+}
+
+.appear-video {
+    height: 40px;
+    width: 40px;
 }

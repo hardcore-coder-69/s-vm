@@ -119,6 +119,11 @@ async function imageAnimationsHandler() {
         imgEl.setAttribute("style", updatedStyles);
     }
 
+    const appearVideoEl = document.getElementById('appear-video');
+    if(appearVideoEl && appearVideoEl.checked) {
+        
+    }
+
     const transformRowsContainerEl = document.getElementById("transform-rows-container");
     const animationRows = Array.from(transformRowsContainerEl.getElementsByClassName('new-row'));
     if (animationRows.length <= 0) return;

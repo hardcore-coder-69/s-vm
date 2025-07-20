@@ -10,8 +10,8 @@
 
 <body>
     <div class="action" id="buttons">
-        <textarea id="hookText" name="hookText" class="hookText" placeholder="Did you know?" rows="2"
-            cols="40">Did you know?</textarea><br>
+        <!-- <textarea id="hookText" name="hookText" class="hookText" placeholder="Did you know?" rows="2"
+            cols="40">Did you know?</textarea><br> -->
 
         <label for="bg-image">Background Image</label>
         <input type="file" accept="image/*" id="bg-image">
@@ -52,19 +52,25 @@
         <label for="audio-upload">Upload Audio</label>
         <input type="file" id="audio-upload" accept="audio/*" />
 
+        <div class="appear-video-container">
+            <div class="appear-video-label">Appear Video</div>
+            <input type="checkbox" class="appear-video" id="appear-video" checked>
+        </div>
+        
         <button class="upload-btn" onclick="startVideoHandler()">Start Video</button>
     </div>
 
-    <div class="bg-image-container" id="bg-image-container">
-        <img class="img2" id="img" src="">
+    <div class="video-container" id="video-container">
+        <div class="bg-image-container" id="bg-image-container">
+            <img class="img2" id="img" src="">
+        </div>
+    
+        <div class="img img1" id="uploaded-img-container">
+            <img id="uploaded-img" class="uploaded-img" src="">
+        </div>
     </div>
-
-    <div class="img img1" id="uploaded-img-container">
-        <img id="uploaded-img" class="uploaded-img" src="">
-    </div>
-
-    <div class="hookTextContainer" id="hookTextContainer"></div>
-
+    
+    <!-- <div class="hookTextContainer" id="hookTextContainer"></div> -->
     <audio id="uploaded-audio" loop></audio>
     <audio src="" id="shocked-sound-effect"></audio>
 
