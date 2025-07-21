@@ -103,8 +103,8 @@ async function uploadHandler() {
         };
     }
 
-    addVideoText();
-    appearHandler();
+    // addVideoText();
+    // appearHandler();
 }
 
 async function appearHandler() {
@@ -179,7 +179,6 @@ function addNewAnimationHandler() {
 }
 
 async function bgAnimationsHandler() {
-    const bgImgEl = document.getElementById('bg-image-container');
     const imgEl = document.getElementById('img');
     imgEl.style.display = 'block';
 

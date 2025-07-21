@@ -59,13 +59,12 @@ label {
 
 .img1 {
     position: absolute;
-    height: calc(100vh - 200px);
-    top: 200px;
+    height: 100vh;
     overflow: hidden;
 }
 
 .uploaded-img {
-    height: calc(100vh - 200px);
+    height: 100vh;
     width: auto;
 }
 
@@ -176,8 +175,7 @@ label {
 
 .bg-image-container {
     position: absolute;
-    height: calc(100vh - 200px);
-    top: 200px;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -518,9 +516,9 @@ textarea {
 }
 
 
-.video-container {
+/* .video-container {
     opacity: 0;
-}
+} */
 
 
 .text-container {
