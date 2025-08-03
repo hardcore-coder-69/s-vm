@@ -12,54 +12,46 @@
     <div class="action" id="buttons">
         <!-- <textarea id="hookText" name="hookText" class="hookText" placeholder="Did you know?" rows="2"
             cols="40">Did you know?</textarea><br> -->
-
-        <label for="bg-image">Background Image</label>
-        <input type="file" accept="image/*" id="bg-image">
-        <textarea id="bgImageStyles" name="bgImageStyles" class="bgImageStyles"
-            placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea><br>
-        <label for="fileInput">Upload Image</label>
-        <input type="file" accept="image/*" id="fileInput">
-        <textarea id="imageStyles" name="imageStyles" class="imageStyles"
-            placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea><br>
-
-        <!-- <div class="animate-checkbox">
-            <div class="animate-checkbox-label">Shake image</div>
-            <input type="checkbox" class="checkedBox" id="checkedBox">
+        <div class="video-text-input-container">
+            <textarea type="text" placeholder="Text on top?" class="video-text-input" id="video-text-input" cols="40"></textarea>
         </div>
 
-        <div class="animate-checkbox">
-            <div class="animate-checkbox-label">Appear effect</div>
-            <input type="checkbox" class="checkedBox" id="appear-checkbox">
+        <div class="bg-tags-container">
+            <label for="bg-image">Background Image</label>
+            <input type="file" accept="image/*" id="bg-image">
+            <textarea id="bgImageStyles" name="bgImageStyles" class="bgImageStyles" placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea>
+            <div class="transform-rows-container" id="transform-bgrows-container"></div>
+            <button class="add-new-transform" id="add-newbg-transform" onclick="addNewBGAnimationHandler()">
+                &plus; BG Animation
+            </button>
         </div>
 
-        <div class="animate-checkbox">
-            <div class="animate-checkbox-label">Burning effect</div>
-            <input type="checkbox" class="checkedBox" id="burning-checkbox">
-        </div> -->
 
-        <div class="transform-rows-container" id="transform-bgrows-container">
+        <div class="image-tags-container">
+            <label for="fileInput">Upload Image</label>
+            <input type="file" accept="image/*" id="fileInput">
+            <textarea id="imageStyles" name="imageStyles" class="imageStyles" placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea>
+            <div class="transform-rows-container" id="transform-rows-container"></div>
+            <button class="add-new-transform" id="add-new-transform" onclick="addNewAnimationHandler()">
+                &plus; Image Animation
+            </button>
         </div>
-        <button class="add-new-transform" id="add-newbg-transform" onclick="addNewBGAnimationHandler()">
-            &plus; Add BG animation
-        </button>
-
-        <div class="transform-rows-container" id="transform-rows-container">
+            
+        <div class="image-effects-container">
+            <div class="animate-checkbox">
+                <div class="animate-checkbox-label">Shake image</div>
+                <input type="checkbox" class="checkedBox" id="checkedBox">
+            </div>
+    
+            <div class="animate-checkbox">
+                <div class="animate-checkbox-label">Appear image</div>
+                <input type="checkbox" class="checkedBox" id="appear-checkbox">
+            </div>
         </div>
-        <button class="add-new-transform" id="add-new-transform" onclick="addNewAnimationHandler()">
-            &plus; Add image animation
-        </button>
-
-        <label for="audio-upload">Upload Audio</label>
+        
+        <label for="audio-upload">Audio?</label>
         <input type="file" id="audio-upload" accept="audio/*" />
 
-        <!-- <div class="appear-video-container">
-            <input type="number" placeholder="Appear after(s)" class="appear-input" id="appear-input" >
-        </div>
-
-        <div class="video-text-input-container">
-            <textarea type="text" placeholder="Video text on top" class="video-text-input" id="video-text-input" cols="40"></textarea>
-        </div> -->
-        
         <button class="upload-btn" onclick="startVideoHandler()">Start Video</button>
     </div>
 

@@ -17,7 +17,7 @@ label {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .upload-btn {
@@ -69,7 +69,7 @@ label {
 }
 
 .animate {
-    animation: myAnimation .3s infinite;
+    animation: myAnimation .1s infinite;
 }
 
 .burning-parent {
@@ -150,11 +150,41 @@ label {
 }
 
 .transform-rows-container {
+    margin-top: 5px;
     margin-left: 15px;
 }
 
-.new-row {
+.bg-tags-container {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
+    width: 306px;
+}
+
+.image-tags-container {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 306px;
+}
+
+.image-effects-container {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 306px;
 }
 
 .curtain-position-top {
@@ -167,10 +197,18 @@ label {
 
 .add-new-transform {
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     font-size: 32px;
     background: aliceblue;
     border: none;
+}
+
+.new-bg-row {
+    width: 320px;
+}
+
+.new-row {
+    width: 320px;
 }
 
 .bg-image-container {
@@ -463,25 +501,35 @@ textarea {
 @keyframes myAnimation {
     0% {
         opacity: 1;
-        transform: translateX(-1px);
+        transform: translate(0px, 0px);
     }
 
-    25% {
+    15% {
         opacity: 0.9;
-        transform: translateY(-1px);
+        transform: translateX(-2px);
     }
 
-    50% {
+    30% {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+    45% {
         opacity: 0.8;
-        transform: translateX(1px);
+        transform: translate(0px, 0px);
+    }
+
+    60% {
+        opacity: 0.9;
+        transform: translateX(2px);
     }
 
     75% {
         opacity: 0.9;
-        transform: translateY(1px);
+        transform: translateY(2px);
     }
 
-    100% {
+    95% {
         opacity: 1;
         transform: translate(0px, 0px);
         /* transform: translateY(0px); */
@@ -522,12 +570,13 @@ textarea {
 
 
 .text-container {
-    margin-top: 40px;
-    height: 130px;
+    position: fixed;
+    width: 92vw;
+    bottom: 80vh;
+    z-index: 1;
     background: #fff;
     color: #000;
     font-size: 18px;
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 15px;

@@ -68,34 +68,24 @@ async function uploadHandler() {
             let imageContainer = document.getElementById("uploaded-img-container");
             let imgEl = document.getElementById('uploaded-img');
 
-            // // Shake Image
-            // let checkbox = document.getElementById("checkedBox");
-            // if (!checkbox.checked) {
-            //     imgEl.classList.remove('animate');
-            // } else {
-            //     imgEl.classList.add('animate');
-            // }
+            // Shake Image
+            let checkbox = document.getElementById("checkedBox");
+            if (!checkbox.checked) {
+                imgEl.classList.remove('animate');
+            } else {
+                imgEl.classList.add('animate');
+            }
 
-            // // Appear With Effect
-            // let appearCheckbox = document.getElementById("appear-checkbox");
-            // if (appearCheckbox.checked) {
-            //     // imageContainer.classList.add('blink');
-            //     await sleep(2);
-            //     imgEl.classList.add("appear-animation");
-            // } else {
-            //     // imageContainer.classList.remove('blink');
-            //     imgEl.classList.remove("appear-animation");
-            // }
-
-            // // Burning Image
-            // let burningCheckbox = document.getElementById("burning-checkbox");
-            // if (!burningCheckbox.checked) {
-            //     imageContainer.classList.remove('burning-parent');
-            //     imgEl.classList.remove('burning-animation');
-            // } else {
-            //     imageContainer.classList.add('burning-parent');
-            //     imgEl.classList.add('burning-animation');
-            // }
+            // Appear With Effect
+            let appearCheckbox = document.getElementById("appear-checkbox");
+            if (appearCheckbox.checked) {
+                // imageContainer.classList.add('blink');
+                await sleep(2);
+                imgEl.classList.add("appear-animation");
+            } else {
+                // imageContainer.classList.remove('blink');
+                imgEl.classList.remove("appear-animation");
+            }
 
             imgEl.src = imageSrc;
             imgEl.style.display = 'none';
@@ -103,21 +93,7 @@ async function uploadHandler() {
         };
     }
 
-    // addVideoText();
-    // appearHandler();
-}
-
-async function appearHandler() {
-    const appearInputEl = document.getElementById('appear-input');
-    if (appearInputEl) {
-        let appearAfterTime = appearInputEl.value;
-        setTimeout(() => {
-            const videoContainerEl = document.getElementById('video-container');
-            videoContainerEl.style.opacity = 'unset';
-            videoContainerEl.style.animation = 'appearAnimation 5s';
-            playUploadedAudio();
-        }, appearAfterTime * 1000);
-    }
+    addVideoText();
 }
 
 async function addVideoText() {
