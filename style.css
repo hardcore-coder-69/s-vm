@@ -548,11 +548,30 @@ textarea {
 .video-text-input-container {
     margin-bottom: 30px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.take-text-size {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 22px;
+    margin-top: 5px;
+    width: 335px;
+}
+
+.take-text-size input {
+    font-size: 22px;
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
 .video-text-input {
+    width: 335px;
     font-size: 18px;
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -587,4 +606,5 @@ textarea {
 
 .video-text {
     text-align: center;
+    font-weight: bold;
 }

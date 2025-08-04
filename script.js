@@ -93,15 +93,18 @@ async function uploadHandler() {
         };
     }
 
+    playUploadedAudio();
     addVideoText();
 }
 
 async function addVideoText() {
     const videoTextInputEl = document.getElementById('video-text-input');
     if(videoTextInputEl && videoTextInputEl.value) {
+        const textSizeEl = document.getElementById('top-text-size');
         const videoTextEl = document.getElementById('video-text');
         const textContainerEl = document.getElementById('text-container');
         textContainerEl.style.display = 'flex';
+        videoTextEl.style.fontSize = `${textSizeEl.value}px`;
         videoTextEl.innerText = videoTextInputEl.value;
     }
 }
