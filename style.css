@@ -546,6 +546,11 @@ textarea {
 }
 
 .video-text-input-container {
+    background: #282828;
+    width: 345px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -559,7 +564,7 @@ textarea {
     justify-content: start;
     font-size: 22px;
     margin-top: 5px;
-    width: 335px;
+    width: 330px;
 }
 
 .take-text-size input {
@@ -571,7 +576,7 @@ textarea {
 }
 
 .video-text-input {
-    width: 335px;
+    width: 310px;
     font-size: 18px;
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
