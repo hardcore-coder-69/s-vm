@@ -95,11 +95,12 @@ async function uploadHandler() {
 
     playUploadedAudio();
     addVideoText();
+    changingImagesHandler();
 }
 
 async function addVideoText() {
     const videoTextInputEl = document.getElementById('video-text-input');
-    if(videoTextInputEl && videoTextInputEl.value) {
+    if (videoTextInputEl && videoTextInputEl.value) {
         const textSizeEl = document.getElementById('top-text-size');
         const videoTextEl = document.getElementById('video-text');
         const textContainerEl = document.getElementById('text-container');
@@ -215,6 +216,54 @@ function playUploadedAudio() {
         audioElement.src = audioURL;
         audioElement.play();
     }
+}
+
+
+const changingImagesEl = document.getElementById('changing-images');
+changingImagesEl.addEventListener('change', function () {
+    const changingImagesBoxEl = document.getElementById('changing-images-box');
+    if (changingImagesEl && changingImagesEl.checked) {
+        let uploadImagesEl = document.createElement('input');
+        uploadImagesEl.setAttribute('type', 'file');
+        uploadImagesEl.setAttribute('accept', 'image/*');
+        uploadImagesEl.setAttribute('multiple', true);
+        uploadImagesEl.setAttribute('id', 'changing-images-input');
+        uploadImagesEl.classList.add('changing-images-input');
+        changingImagesBoxEl.appendChild(uploadImagesEl);
+    }
+})
+
+async function changingImagesHandler() {
+    const changingImagesInputEl = document.getElementById('changing-images-input');
+    const changingImagesVideoEl = document.getElementById('changing-images-video');
+    const realChangingImageEl = document.getElementById('real-changing-image');
+    const files = changingImagesInputEl.files;
+    files.length > 0 ? changingImagesVideoEl.style.display = 'flex' : changingImagesVideoEl.style.display = 'none';
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const imageSrc = await readFileAsDataURL(file);
+        realChangingImageEl.setAttribute('src', imageSrc);
+        realChangingImageEl.classList.add(`show-changing-image-${i % 2 == 0 ? 'left' : 'right'}`);
+        await sleep(1);
+        realChangingImageEl.classList.remove(`show-changing-image-${i % 2 == 0 ? 'left' : 'right'}`);
+
+        // realChangingImageEl.classList.add(`shake-changing-image`);
+        // await sleep(1);
+        // realChangingImageEl.classList.remove(`shake-changing-image`);
+
+        realChangingImageEl.classList.add(`hide-changing-image-${i % 2 == 0 ? 'left' : 'right'}`);
+        await sleep(0.5);
+        realChangingImageEl.classList.remove(`hide-changing-image-${i % 2 == 0 ? 'left' : 'right'}`);
+    }
+}
+
+function readFileAsDataURL(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
 }
 
 function sleep(s) {

@@ -558,6 +558,141 @@ textarea {
     justify-content: center;
 }
 
+.changing-images-box {
+    width: 335px;
+    background-color: #282828;
+    margin-bottom: 30px;
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.changing-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.changing-checkbox-label {
+    font-size: 28px;
+    padding-right: 10px;
+}
+
+.changing-images {
+    height: 40px;
+    width: 40px;
+}
+
+.changing-images-input {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.changing-images-video {
+    display: none;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.real-changing-image {
+    display: none;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.shake-changing-image {
+    display: block;
+    /* transform-origin: top center; */
+    animation: shakeChangingImage 1s ease-in;
+}
+
+@keyframes shakeChangingImage {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+.show-changing-image-left {
+    display: block;
+    opacity: 0;
+    animation: showChangingImageLeft 1s ease-out forwards;
+}
+
+.hide-changing-image-left {
+    display: block;
+    animation: hideChangingImageLeft 0.5s ease-out forwards;
+}
+
+@keyframes hideChangingImageLeft {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0) translateX(500px);
+    }
+}
+
+@keyframes showChangingImageLeft {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateX(-500px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.show-changing-image-right {
+    display: block;
+    opacity: 0;
+    animation: showChangingImageRight 1s ease-out forwards;
+}
+
+.hide-changing-image-right {
+    display: block;
+    animation: hideChangingImageRight 0.5s ease-out forwards;
+}
+
+@keyframes hideChangingImageRight {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0) translateX(-500px);
+    }
+}
+
+@keyframes showChangingImageRight {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateX(500px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
 .take-text-size {
     display: flex;
     align-items: center;
