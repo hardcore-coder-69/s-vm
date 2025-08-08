@@ -61,6 +61,17 @@
                 <input type="checkbox" class="checkedBox" id="appear-checkbox">
             </div>
         </div>
+
+        <div class="tp-inputs">
+            <div class="tp-label">Twitter Post</div>
+            <textarea type="text" placeholder="Caption text" class="video-text-input tp-textarea" id="tp-text-input" cols="40"></textarea>
+            <label for="tp-upload-image">Upload Image</label>
+            <input type="file" accept="image/*" id="tp-upload-image" class="tp-upload-image">
+            <div class="transform-rows-container" id="tp-transform-rows-container" style="margin-top: 25px;"></div>
+            <button class="add-new-transform" id="tp-add-new-transform" onclick="addNewTPAnimationHandler()">
+                &plus; Image Animation
+            </button>
+        </div>
         
         <label for="audio-upload">Audio?</label>
         <input type="file" id="audio-upload" accept="audio/*" />
@@ -83,6 +94,27 @@
 
         <div class="changing-images-video" id="changing-images-video">
             <img src="" class="real-changing-image" id="real-changing-image">
+        </div>
+    </div>
+
+    <div class="twitter-post-container" id="twitter-post-container">
+        <div class="tp-user-data">
+            <div class="tp-top-left">
+                <img src="./assets/channels4_profile.jpg" class="tp-user-image">
+                <div class="tp-name-username-cont">
+                    <div class="tp-name">QuickFactz</div>
+                    <div class="tp-username">@QuickFactz3</div>
+                </div>
+            </div>
+            <div class="tp-posted-at">just now</div>
+        </div>
+
+        <div class="tp-caption-container">
+            <div class="tp-caption" id="tp-caption"></div>
+        </div>
+
+        <div class="tp-image-container">
+            <img src="" class="tp-image" id="tp-image">
         </div>
     </div>
     

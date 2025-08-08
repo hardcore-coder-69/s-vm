@@ -3,6 +3,7 @@ shockedSoundEffectEl.load();
 
 async function startVideoHandler() {
     // await hookTextHandler();
+    await twitterPostHandler();
     await uploadHandler();
 }
 
@@ -95,7 +96,7 @@ async function uploadHandler() {
 
     playUploadedAudio();
     addVideoText();
-    changingImagesHandler();
+    // changingImagesHandler();
 }
 
 async function addVideoText() {
@@ -268,4 +269,67 @@ function readFileAsDataURL(file) {
 
 function sleep(s) {
     return new Promise(resolve => setTimeout(resolve, s * 1000));
+}
+
+
+
+async function twitterPostHandler() {
+    const tpContainerEl = document.getElementById('twitter-post-container');
+    const tpTextInputEl = document.getElementById('tp-text-input');
+    const tpUploadImageEl = document.getElementById('tp-upload-image');
+
+    const tpImage = tpUploadImageEl.files[0];
+    if (tpImage) {
+        tpContainerEl.style.display = 'flex';
+        const reader = new FileReader();
+        reader.readAsDataURL(tpImage);
+        reader.onloadend = function () {
+            const imageSrc = reader.result;
+            const tpImageEl = document.getElementById('tp-image');
+            const tpCaptionEl = document.getElementById('tp-caption');
+            tpImageEl.src = imageSrc;
+            tpImageEl.style.display = 'none';
+            tpCaptionEl.innerText = tpTextInputEl.value;
+            tpAnimationsHandler();
+        };
+    }
+}
+
+async function tpAnimationsHandler() {
+    const imgEl = document.getElementById('tp-image');
+    imgEl.style.display = 'block';
+
+    const transformRowsContainerEl = document.getElementById("tp-transform-rows-container");
+    const animationRows = Array.from(transformRowsContainerEl.getElementsByClassName('new-row'));
+    if (animationRows.length <= 0) return;
+
+    for (let i = 0; i < animationRows.length; i++) {
+        let rowEl = animationRows[i];
+        let animation = Array.from(rowEl.getElementsByClassName('new-animation'))[0].value;
+        let duration = Array.from(rowEl.getElementsByClassName('new-animation-duration'))[0].value;
+
+        await sleep(0);
+        console.log(animation, duration);
+        imgEl.style.transition = `transform ${duration}s linear`;
+        imgEl.style.transform = animation;
+        await sleep(duration);
+    }
+}
+
+function addNewTPAnimationHandler() {
+    const transformRowsContainerEl = document.getElementById("tp-transform-rows-container");
+
+    let newRow = `
+        <div class="new-row" id="tp-new-row-${animationRowCount}">
+            <input type="text" placeholder="scale(2) translate(10%, 0%)" class="new-animation" id="tp-new-animation-${animationRowCount}">
+            <input type="number" placeholder="duration(s)" class="new-animation-duration" id="tp-new-row-animation-duration-${animationRowCount}">
+        </div>
+    `;
+
+    let divEl = document.createElement('div');
+    divEl.innerHTML = newRow;
+    let newRowEl = divEl.querySelector('div');
+    transformRowsContainerEl.append(newRowEl);
+    divEl.remove();
+    animationRowCount++;
 }
