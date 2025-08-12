@@ -13,7 +13,8 @@
         <!-- <textarea id="hookText" name="hookText" class="hookText" placeholder="Did you know?" rows="2"
             cols="40">Did you know?</textarea><br> -->
         <div class="video-text-input-container">
-            <textarea type="text" placeholder="Text on top?" class="video-text-input" id="video-text-input" cols="40"></textarea>
+            <textarea type="text" placeholder="Text on top?" class="video-text-input" id="video-text-input"
+                cols="40"></textarea>
 
             <div class="take-text-size">
                 <div>Text Size</div>
@@ -32,7 +33,8 @@
         <div class="bg-tags-container">
             <label for="bg-image">Background Image</label>
             <input type="file" accept="image/*" id="bg-image">
-            <textarea id="bgImageStyles" name="bgImageStyles" class="bgImageStyles" placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea>
+            <textarea id="bgImageStyles" name="bgImageStyles" class="bgImageStyles"
+                placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea>
             <div class="transform-rows-container" id="transform-bgrows-container"></div>
             <button class="add-new-transform" id="add-newbg-transform" onclick="addNewBGAnimationHandler()">
                 &plus; BG Animation
@@ -43,19 +45,20 @@
         <div class="image-tags-container">
             <label for="fileInput">Upload Image</label>
             <input type="file" accept="image/*" id="fileInput">
-            <textarea id="imageStyles" name="imageStyles" class="imageStyles" placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea>
+            <textarea id="imageStyles" name="imageStyles" class="imageStyles"
+                placeholder="opacity: 0.5; border: 1px solid red;" rows="2" cols="40"></textarea>
             <div class="transform-rows-container" id="transform-rows-container"></div>
             <button class="add-new-transform" id="add-new-transform" onclick="addNewAnimationHandler()">
                 &plus; Image Animation
             </button>
         </div>
-            
+
         <div class="image-effects-container">
             <div class="animate-checkbox">
                 <div class="animate-checkbox-label">Shake image</div>
                 <input type="checkbox" class="checkedBox" id="checkedBox">
             </div>
-    
+
             <div class="animate-checkbox">
                 <div class="animate-checkbox-label">Appear image</div>
                 <input type="checkbox" class="checkedBox" id="appear-checkbox">
@@ -64,15 +67,33 @@
 
         <div class="tp-inputs">
             <div class="tp-label">Twitter Post</div>
-            <textarea type="text" placeholder="Caption text" class="video-text-input tp-textarea" id="tp-text-input" cols="40"></textarea>
+            <div class="tp-profile-card">
+                <div class="tp-profile-select">Select profile:</div>
+                <div class="tp-profile-options">
+                    <div class="tp-option">
+                        <span>QuickFactz</span>
+                        <input class="tp-option-radio" type="radio" name="profile" value="0" checked>
+                    </div>
+                    <div class="tp-option">
+                        <span>HardcoreCoder</span>
+                        <input class="tp-option-radio" type="radio" name="profile" value="1">
+                    </div>
+                </div>
+            </div>
+            <textarea type="text" placeholder="Caption text" class="video-text-input tp-textarea" id="tp-text-input"
+                cols="40"></textarea>
             <label for="tp-upload-image">Upload Image</label>
             <input type="file" accept="image/*" id="tp-upload-image" class="tp-upload-image">
+            <div class="tp-appear-image">
+                <div class="tp-appear-image-label">Appear image</div>
+                <input type="checkbox" class="tp-appear-checkbox" id="tp-appear-checkbox">
+            </div>
             <div class="transform-rows-container" id="tp-transform-rows-container" style="margin-top: 25px;"></div>
             <button class="add-new-transform" id="tp-add-new-transform" onclick="addNewTPAnimationHandler()">
                 &plus; Image Animation
             </button>
         </div>
-        
+
         <label for="audio-upload">Audio?</label>
         <input type="file" id="audio-upload" accept="audio/*" />
 
@@ -83,11 +104,11 @@
         <div class="text-container" id="text-container">
             <div class="video-text" id="video-text"></div>
         </div>
-        
+
         <div class="bg-image-container" id="bg-image-container">
             <img class="img2" id="img" src="">
         </div>
-    
+
         <div class="img img1" id="uploaded-img-container">
             <img id="uploaded-img" class="uploaded-img" src="">
         </div>
@@ -100,13 +121,13 @@
     <div class="twitter-post-container" id="twitter-post-container">
         <div class="tp-user-data">
             <div class="tp-top-left">
-                <img src="./assets/channels4_profile.jpg" class="tp-user-image">
+                <img src="./assets/channels4_profile.jpg" class="tp-user-image" id="tp-user-image">
                 <div class="tp-name-username-cont">
-                    <div class="tp-name">QuickFactz</div>
-                    <div class="tp-username">@QuickFactz3</div>
+                    <div class="tp-name" id="tp-name">QuickFactz</div>
+                    <div class="tp-username" id="tp-username">@QuickFactz3</div>
                 </div>
             </div>
-            <div class="tp-posted-at">just now</div>
+            <div class="tp-posted-at"><span class="tp-just-now-dot">•</span>few seconds ago</div>
         </div>
 
         <div class="tp-caption-container">
@@ -117,7 +138,7 @@
             <img src="" class="tp-image" id="tp-image">
         </div>
     </div>
-    
+
     <!-- <div class="hookTextContainer" id="hookTextContainer"></div> -->
     <audio id="uploaded-audio" loop></audio>
     <audio src="" id="shocked-sound-effect"></audio>

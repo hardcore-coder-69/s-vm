@@ -1,6 +1,22 @@
 const shockedSoundEffectEl = document.getElementById('shocked-sound-effect');
 shockedSoundEffectEl.load();
 
+const profiles = [
+    {
+        index: 0,
+        img: "./assets/channels4_profile.jpg",
+        name: "QuickFactz",
+        handle: "QuickFactz"
+    },
+    {
+        index: 1,
+        img: "./assets/channels4_profile2.jpg",
+        name: "HardcoreCoder",
+        handle: "HardcoreCoder"
+    }
+]
+let selectedProfileIndex = 0;
+
 async function startVideoHandler() {
     // await hookTextHandler();
     await twitterPostHandler();
@@ -279,17 +295,39 @@ async function twitterPostHandler() {
     const tpUploadImageEl = document.getElementById('tp-upload-image');
 
     const tpImage = tpUploadImageEl.files[0];
-    if (tpImage) {
+
+    if(tpTextInputEl.value || tpImage) {
         tpContainerEl.style.display = 'flex';
+        tpContainerEl.requestFullscreen();
+        const tpProfileImageEl = document.getElementById('tp-user-image');
+        const tpProfileNameEl = document.getElementById('tp-name');
+        const tpProfileUsernameEl = document.getElementById('tp-username');
+        tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
+        tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
+        tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
+    }
+
+    if (tpTextInputEl.value) {
+        const tpCaptionEl = document.getElementById('tp-caption');
+        tpCaptionEl.innerText = tpTextInputEl.value;
+    }
+    if (tpImage) {
         const reader = new FileReader();
         reader.readAsDataURL(tpImage);
-        reader.onloadend = function () {
+        reader.onloadend = async function () {
             const imageSrc = reader.result;
             const tpImageEl = document.getElementById('tp-image');
-            const tpCaptionEl = document.getElementById('tp-caption');
             tpImageEl.src = imageSrc;
+
+            const tpAppearCheckEl = document.getElementById('tp-appear-checkbox');
+            if (tpAppearCheckEl && tpAppearCheckEl.checked) {
+                tpImageEl.classList.add('appear-animation');
+                tpImageEl.style.display = 'block';
+                await sleep(5);
+                tpImageEl.classList.remove('appear-animation');
+            }
+
             tpImageEl.style.display = 'none';
-            tpCaptionEl.innerText = tpTextInputEl.value;
             tpAnimationsHandler();
         };
     }
@@ -333,3 +371,13 @@ function addNewTPAnimationHandler() {
     divEl.remove();
     animationRowCount++;
 }
+
+
+const profileRadios = document.querySelectorAll('input[name="profile"]');
+profileRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        if (radio.checked) {
+            selectedProfileIndex = radio.value;
+        }
+    });
+});
