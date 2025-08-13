@@ -293,10 +293,8 @@ async function twitterPostHandler() {
     const tpContainerEl = document.getElementById('twitter-post-container');
     const tpTextInputEl = document.getElementById('tp-text-input');
     const tpUploadImageEl = document.getElementById('tp-upload-image');
-
     const tpImage = tpUploadImageEl.files[0];
-
-    if(tpTextInputEl.value || tpImage) {
+    if (tpTextInputEl.value || tpImage) {
         tpContainerEl.style.display = 'flex';
         tpContainerEl.requestFullscreen();
         const tpProfileImageEl = document.getElementById('tp-user-image');
@@ -305,6 +303,10 @@ async function twitterPostHandler() {
         tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
         tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
         tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
+        const tpBlinkCheckEl = document.getElementById('tp-blink-checkbox');
+        if (tpBlinkCheckEl && tpBlinkCheckEl.checked) {
+            tpContainerEl.classList.add('blink');
+        }
     }
 
     if (tpTextInputEl.value) {
@@ -321,6 +323,7 @@ async function twitterPostHandler() {
 
             const tpAppearCheckEl = document.getElementById('tp-appear-checkbox');
             if (tpAppearCheckEl && tpAppearCheckEl.checked) {
+                await sleep(6);
                 tpImageEl.classList.add('appear-animation');
                 tpImageEl.style.display = 'block';
                 await sleep(5);
