@@ -6,7 +6,7 @@ const profiles = [
         index: 0,
         img: "./assets/channels4_profile.jpg",
         name: "QuickFactz",
-        handle: "QuickFactz"
+        handle: "QuickFactz3"
     },
     {
         index: 1,
