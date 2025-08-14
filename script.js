@@ -1,3 +1,4 @@
+const videoContainerEl = document.getElementById('video-container');
 const shockedSoundEffectEl = document.getElementById('shocked-sound-effect');
 shockedSoundEffectEl.load();
 
@@ -57,6 +58,8 @@ async function hideHookText() {
 }
 
 async function uploadHandler() {
+    videoContainerEl.requestFullscreen();
+    await sleep(5);
     const fileInput = document.getElementById('fileInput');
     const bgImageEl = document.getElementById('bg-image');
     const buttons = document.getElementById('buttons');
@@ -117,13 +120,28 @@ async function uploadHandler() {
 
 async function addVideoText() {
     const videoTextInputEl = document.getElementById('video-text-input');
+    const typingTextCheckEl = document.getElementById('typing-text-check');
     if (videoTextInputEl && videoTextInputEl.value) {
-        const textSizeEl = document.getElementById('top-text-size');
-        const videoTextEl = document.getElementById('video-text');
-        const textContainerEl = document.getElementById('text-container');
-        textContainerEl.style.display = 'flex';
-        videoTextEl.style.fontSize = `${textSizeEl.value}px`;
-        videoTextEl.innerText = videoTextInputEl.value;
+        if (typingTextCheckEl && typingTextCheckEl.checked) {
+            const typingTextEl = document.getElementById('typing-text');
+            const textSizeEl = document.getElementById('top-text-size');
+            typingTextEl.style.fontSize = `${textSizeEl.value}px`;
+
+            await sleep(1);
+            startTyping({
+                textEl: typingTextEl,
+                text: videoTextInputEl.value,
+                typingSpeed: 0.12   // character delay in seconds
+            });
+            // typingTextEl.innerText = videoTextInputEl.value;
+        } else {
+            const textSizeEl = document.getElementById('top-text-size');
+            const videoTextEl = document.getElementById('video-text');
+            const textContainerEl = document.getElementById('text-container');
+            textContainerEl.style.display = 'flex';
+            videoTextEl.style.fontSize = `${textSizeEl.value}px`;
+            videoTextEl.innerText = videoTextInputEl.value;
+        }
     }
 }
 
@@ -384,3 +402,44 @@ profileRadios.forEach(radio => {
         }
     });
 });
+
+
+
+let typingText = '';
+let speed = 0;
+let charIndex = 0;
+let pauseCharacters = ['.', ','];
+let specialLength = 2;
+async function startTyping({ textEl, text, typingSpeed }) {
+    if (textEl && text && typingSpeed) {
+        // await keyboardTypingSoundEl.play();
+        textEl.style.display = 'block';
+    };
+    if (text) typingText = text;
+    if (typingSpeed) speed = typingSpeed;
+
+    if (charIndex < typingText.length) {
+        textEl.textContent = textEl.textContent.substring(0, textEl.textContent.length - specialLength);
+        textEl.textContent += typingText.charAt(charIndex);
+
+        if (charIndex != typingText.length - 1) {
+            textEl.textContent += '✏️';
+        }
+
+        // Pause typing
+        // if (pauseCharacters.includes(typingText.charAt(charIndex))) {
+            // await keyboardTypingSoundEl.pause();
+            // await sleep(250);
+            // await keyboardTypingSoundEl.play();
+        // }
+
+        charIndex++;
+        await sleep(speed);
+        await startTyping({ textEl });
+    } else {
+        typingText = '';
+        speed = 0;
+        charIndex = 0;
+        // await keyboardTypingSoundEl.pause();
+    }
+}

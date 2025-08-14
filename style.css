@@ -722,6 +722,28 @@ textarea {
     padding: 10px;
 }
 
+.typing-text-container {
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    height: calc(100vh 667.333px - 120px);
+    width: calc(100vw - 70px);
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.typing-text {
+    display: none;
+    background-color: #fff;
+    color: #000;
+    /* font-weight: bold; */
+    padding: 10px;
+    box-shadow: 0px 0px 5px 0px #000;
+}
+
 
 /* .video-container {
     opacity: 0;
