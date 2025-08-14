@@ -131,7 +131,7 @@ async function addVideoText() {
             startTyping({
                 textEl: typingTextEl,
                 text: videoTextInputEl.value,
-                typingSpeed: 0.12   // character delay in seconds
+                typingSpeed: 0.10   // character delay in seconds
             });
             // typingTextEl.innerText = videoTextInputEl.value;
         } else {
@@ -409,10 +409,9 @@ let typingText = '';
 let speed = 0;
 let charIndex = 0;
 let pauseCharacters = ['.', ','];
-let specialLength = 2;
+let specialLength = 0;
 async function startTyping({ textEl, text, typingSpeed }) {
     if (textEl && text && typingSpeed) {
-        // await keyboardTypingSoundEl.play();
         textEl.style.display = 'block';
     };
     if (text) typingText = text;
@@ -422,17 +421,6 @@ async function startTyping({ textEl, text, typingSpeed }) {
         textEl.textContent = textEl.textContent.substring(0, textEl.textContent.length - specialLength);
         textEl.textContent += typingText.charAt(charIndex);
 
-        if (charIndex != typingText.length - 1) {
-            textEl.textContent += '✏️';
-        }
-
-        // Pause typing
-        // if (pauseCharacters.includes(typingText.charAt(charIndex))) {
-            // await keyboardTypingSoundEl.pause();
-            // await sleep(250);
-            // await keyboardTypingSoundEl.play();
-        // }
-
         charIndex++;
         await sleep(speed);
         await startTyping({ textEl });
@@ -440,6 +428,5 @@ async function startTyping({ textEl, text, typingSpeed }) {
         typingText = '';
         speed = 0;
         charIndex = 0;
-        // await keyboardTypingSoundEl.pause();
     }
 }
