@@ -732,7 +732,7 @@ textarea {
     width: calc(100vw - 70px);
     padding-left: 35px;
     padding-right: 35px;
-    padding-top: 60px;
+    padding-top: 20px;
     z-index: 1000;
 }
 

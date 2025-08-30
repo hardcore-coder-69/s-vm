@@ -131,7 +131,7 @@ async function addVideoText() {
             startTyping({
                 textEl: typingTextEl,
                 text: videoTextInputEl.value,
-                typingSpeed: 0.10   // character delay in seconds
+                typingSpeed: 0.03   // character delay in seconds
             });
             // typingTextEl.innerText = videoTextInputEl.value;
         } else {
