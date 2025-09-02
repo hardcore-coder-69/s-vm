@@ -804,6 +804,7 @@ textarea {
     align-items: start;
     justify-content: center;
     height: 95vh;
+    margin-top: -20px;
 }
 
 .tp-user-image {
@@ -918,4 +919,5 @@ textarea {
 .tp-option-radio {
     height: 20px;
     width: 20px;
+
 }
