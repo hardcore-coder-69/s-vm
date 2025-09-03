@@ -87,16 +87,26 @@
             </div>
             <textarea type="text" placeholder="Caption text" class="video-text-input tp-textarea" id="tp-text-input"
                 cols="40"></textarea>
-            <label for="tp-upload-image">Upload Image</label>
-            <input type="file" accept="image/*" id="tp-upload-image" class="tp-upload-image">
+
+            <div class="tp-upload-image-container">
+                <label for="tp-upload-image">Upload Image</label>
+                <input type="file" accept="image/*" id="tp-upload-image" class="tp-upload-image">
+                <div class="tp-transform-rows-container" id="tp-transform-rows-container"></div>
+                <button class="add-new-transform" id="tp-add-new-transform" onclick="addNewTPAnimationHandler()">
+                    &plus; Image Animation
+                </button>
+            </div>
+
+            <div class="tp-upload-video-container">
+                <label for="videoInput">Upload Video</label>
+                <input type="file" accept="video/*" id="videoInput" class="videoInput">
+                <input type="text" id="credit" class="credit" placeholder="Video credit">
+            </div>
+
             <div class="tp-appear-image">
-                <div class="tp-appear-image-label">Appear image</div>
+                <div class="tp-appear-image-label">Appear Effect</div>
                 <input type="checkbox" class="tp-appear-checkbox" id="tp-appear-checkbox">
             </div>
-            <div class="transform-rows-container" id="tp-transform-rows-container" style="margin-top: 25px;"></div>
-            <button class="add-new-transform" id="tp-add-new-transform" onclick="addNewTPAnimationHandler()">
-                &plus; Image Animation
-            </button>
             <div class="tp-blink-screen">
                 <div class="tp-blink-screen-label">Blink</div>
                 <input type="checkbox" class="tp-blink-screen-checkbox" id="tp-blink-checkbox">
@@ -149,6 +159,11 @@
 
         <div class="tp-image-container">
             <img src="" class="tp-image" id="tp-image">
+        </div>
+
+        <div class="tp-video-container" id="tp-video-container">
+            <video id="tp-video" class="tp-video"></video>
+            <div class="tp-video-credit" id="tp-video-credit"></div>
         </div>
     </div>
 

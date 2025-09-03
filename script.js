@@ -308,11 +308,14 @@ function sleep(s) {
 
 
 async function twitterPostHandler() {
+    const tpAppearCheckEl = document.getElementById('tp-appear-checkbox');
     const tpContainerEl = document.getElementById('twitter-post-container');
     const tpTextInputEl = document.getElementById('tp-text-input');
     const tpUploadImageEl = document.getElementById('tp-upload-image');
+    const tpUploadVideoEl = document.getElementById('videoInput');
     const tpImage = tpUploadImageEl.files[0];
-    if (tpTextInputEl.value || tpImage) {
+    const tpVideo = tpUploadVideoEl.files[0];
+    if (tpTextInputEl.value || tpImage || tpVideo) {
         tpContainerEl.style.display = 'flex';
         tpContainerEl.requestFullscreen();
         await sleep(5);
@@ -340,7 +343,6 @@ async function twitterPostHandler() {
             const tpImageEl = document.getElementById('tp-image');
             tpImageEl.src = imageSrc;
 
-            const tpAppearCheckEl = document.getElementById('tp-appear-checkbox');
             if (tpAppearCheckEl && tpAppearCheckEl.checked) {
                 // await sleep(1);
                 tpImageEl.classList.add('appear-animation');
@@ -352,6 +354,37 @@ async function twitterPostHandler() {
             tpImageEl.style.display = 'none';
             tpAnimationsHandler();
         };
+    }
+
+    if (tpVideo) {
+        const tpVideoContainerEl = document.getElementById('tp-video-container');
+        tpVideoContainerEl.style.display = 'block';
+
+        const tpVideoEl = document.getElementById('tp-video');
+        tpVideoEl.src = URL.createObjectURL(tpVideo);
+        const videoCreditEl = document.getElementById('credit');
+        const tpVideoCreditEl = document.getElementById('tp-video-credit');
+        if(videoCreditEl && videoCreditEl.value) {
+            tpVideoCreditEl.innerHTML = `<img src="./assets/video-image.png" class="credit-text-icon"> ${videoCreditEl.value}`;
+        }
+
+        if (tpAppearCheckEl && tpAppearCheckEl.checked) {
+            tpVideoEl.classList.add('appear-animation');
+            tpVideoEl.style.display = 'block';
+
+            tpVideoCreditEl.classList.add('appear-animation');
+            tpVideoCreditEl.style.display = 'flex';
+
+            await sleep(1);
+            tpVideoEl.loop = true;
+            tpVideoEl.play();
+
+            await sleep(9);
+            tpVideoEl.classList.remove('appear-animation');
+            tpVideoCreditEl.classList.remove('appear-animation');
+        } else {
+            tpVideoEl.style.display = 'block';
+        }
     }
 }
 
