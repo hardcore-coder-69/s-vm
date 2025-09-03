@@ -315,6 +315,7 @@ async function twitterPostHandler() {
     if (tpTextInputEl.value || tpImage) {
         tpContainerEl.style.display = 'flex';
         tpContainerEl.requestFullscreen();
+        await sleep(5);
         const tpProfileImageEl = document.getElementById('tp-user-image');
         const tpProfileNameEl = document.getElementById('tp-name');
         const tpProfileUsernameEl = document.getElementById('tp-username');
@@ -341,10 +342,10 @@ async function twitterPostHandler() {
 
             const tpAppearCheckEl = document.getElementById('tp-appear-checkbox');
             if (tpAppearCheckEl && tpAppearCheckEl.checked) {
-                await sleep(6);
+                // await sleep(1);
                 tpImageEl.classList.add('appear-animation');
                 tpImageEl.style.display = 'block';
-                await sleep(5);
+                await sleep(10);
                 tpImageEl.classList.remove('appear-animation');
             }
 

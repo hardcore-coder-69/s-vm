@@ -302,7 +302,7 @@ textarea {
 }
 
 .appear-animation {
-    animation: appearAnimation 5s ease-in;
+    animation: newAppearAnimation 10s forwards;
 }
 
 .blink {
@@ -329,6 +329,16 @@ textarea {
     }
 
     100% {
+        opacity: 1;
+    }
+}
+
+@keyframes newAppearAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
         opacity: 1;
     }
 }
