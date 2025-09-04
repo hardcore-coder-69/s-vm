@@ -6,8 +6,8 @@ const profiles = [
     {
         index: 0,
         img: "./assets/channels4_profile.jpg",
-        name: "QuickFactz",
-        handle: "QuickFactz3"
+        name: "SpaceExploration",
+        handle: "SpaceExploration3"
     },
     {
         index: 1,
@@ -463,4 +463,5 @@ async function startTyping({ textEl, text, typingSpeed }) {
         speed = 0;
         charIndex = 0;
     }
+
 }
