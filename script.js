@@ -107,6 +107,11 @@ async function uploadHandler() {
                 imgEl.classList.remove("appear-animation");
             }
 
+            const tpBlinkCheckEl = document.getElementById('tp-blink-checkbox');
+            if (tpBlinkCheckEl && tpBlinkCheckEl.checked) {
+                videoContainerEl.classList.add('blink');
+            }
+
             imgEl.src = imageSrc;
             imgEl.style.display = 'none';
             imageAnimationsHandler();
@@ -465,3 +470,4 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
