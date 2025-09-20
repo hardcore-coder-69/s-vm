@@ -788,7 +788,7 @@ textarea {
 .text-container {
     position: fixed;
     width: 89vw;
-    top: 10px;
+    top: 50px;
     z-index: 1;
     background: yellow;
     color: black;
@@ -990,4 +990,5 @@ textarea {
 
 
 }
+
 
