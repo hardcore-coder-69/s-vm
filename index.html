@@ -17,12 +17,11 @@
                 cols="40"></textarea>
 
             <div class="take-text-size">
-                <div>Text Size</div>
+                <div class="faded-text">Font Size</div>
                 <input id="top-text-size" type="number" placeholder="18" value="22">
-                <div>px</div>
             </div>
 
-            <div class="tp-blink-screen">
+            <div class="tp-blink-screen" style="display: none;">
                 <div class="tp-blink-screen-label">Typing on top</div>
                 <input type="checkbox" class="tp-blink-screen-checkbox" id="typing-text-check">
             </div>
@@ -88,6 +87,11 @@
             <textarea type="text" placeholder="Caption text" class="video-text-input tp-textarea" id="tp-text-input"
                 cols="40"></textarea>
 
+            <div class="take-text-size">
+                <div class="faded-text">Font Size</div>
+                <input id="tp-text-size" type="number" placeholder="20" value="20">
+            </div>
+
             <div class="tp-upload-image-container">
                 <label for="tp-upload-image">Upload Image</label>
                 <input type="file" accept="image/*" id="tp-upload-image" class="tp-upload-image">
@@ -104,15 +108,15 @@
             </div>
 
             <div class="tp-appear-image">
-                <div class="tp-appear-image-label">Appear Effect</div>
+                <div class="tp-appear-image-label">Appear</div>
                 <input type="checkbox" class="tp-appear-checkbox" id="tp-appear-checkbox">
             </div>
-            <div class="tp-blink-screen">
-                <div class="tp-blink-screen-label">Blink</div>
-                <input type="checkbox" class="tp-blink-screen-checkbox" id="tp-blink-checkbox">
-            </div>
         </div>
-
+        
+        <div class="tp-blink-screen">
+            <div class="tp-blink-screen-label">Blink Screen</div>
+            <input type="checkbox" class="tp-blink-screen-checkbox" id="tp-blink-checkbox">
+        </div>
         <label for="audio-upload">Audio?</label>
         <input type="file" id="audio-upload" accept="audio/*" />
 

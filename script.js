@@ -318,6 +318,7 @@ async function twitterPostHandler() {
     const tpTextInputEl = document.getElementById('tp-text-input');
     const tpUploadImageEl = document.getElementById('tp-upload-image');
     const tpUploadVideoEl = document.getElementById('videoInput');
+    const tpTextSizeEl = document.getElementById('tp-text-size');
     const tpImage = tpUploadImageEl.files[0];
     const tpVideo = tpUploadVideoEl.files[0];
     if (tpTextInputEl.value || tpImage || tpVideo) {
@@ -338,6 +339,9 @@ async function twitterPostHandler() {
 
     if (tpTextInputEl.value) {
         const tpCaptionEl = document.getElementById('tp-caption');
+        if(tpTextSizeEl && tpTextSizeEl.value) {
+            tpCaptionEl.style.fontSize = `${tpTextSizeEl.value}px`;
+        }
         tpCaptionEl.innerText = tpTextInputEl.value;
     }
     if (tpImage) {
