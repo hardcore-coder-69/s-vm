@@ -112,6 +112,11 @@ async function uploadHandler() {
                 videoContainerEl.classList.add('blink');
             }
 
+            const shakeImageEl = document.getElementById('shake-image');
+            if (shakeImageEl && shakeImageEl.checked) {
+                imageContainer.classList.add('shake-image');
+            }
+
             imgEl.src = imageSrc;
             imgEl.style.display = 'none';
             imageAnimationsHandler();
@@ -334,6 +339,12 @@ async function twitterPostHandler() {
         const tpBlinkCheckEl = document.getElementById('tp-blink-checkbox');
         if (tpBlinkCheckEl && tpBlinkCheckEl.checked) {
             tpContainerEl.classList.add('blink');
+        }
+
+        const shakeImageEl = document.getElementById('shake-image');
+        if (shakeImageEl && shakeImageEl.checked) {
+            const tpImageContainer = document.getElementById('tp-image-container');
+            tpImageContainer.classList.add('shake-image');
         }
     }
 
