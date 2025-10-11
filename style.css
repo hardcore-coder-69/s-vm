@@ -985,6 +985,11 @@ textarea {
     margin-top: 10px;
 }
 
+.extra-spacing {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .tp-option {
     margin-right: 30px;
     display: flex;

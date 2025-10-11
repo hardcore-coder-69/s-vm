@@ -57,6 +57,7 @@ async function hideHookText() {
     hookTextContainerEl.remove();
 }
 
+let textOnly = false;
 async function uploadHandler() {
     videoContainerEl.requestFullscreen();
     await sleep(5);
@@ -123,6 +124,12 @@ async function uploadHandler() {
         };
     }
 
+    if(!bgImage && !file) {
+        textOnly = true;
+    } else {
+        textOnly = false;
+    }
+
     playUploadedAudio();
     addVideoText();
     // changingImagesHandler();
@@ -151,6 +158,10 @@ async function addVideoText() {
             textContainerEl.style.display = 'flex';
             videoTextEl.style.fontSize = `${textSizeEl.value}px`;
             videoTextEl.innerText = videoTextInputEl.value;
+
+            if(textOnly) {
+                videoTextEl.classList.add('extra-spacing');
+            }
         }
     }
 }
@@ -405,6 +416,10 @@ async function twitterPostHandler() {
         } else {
             tpVideoEl.style.display = 'block';
         }
+    }
+
+    if(!tpImage && !tpVideo) {
+        tpContainerEl.classList.add('extra-spacing');
     }
 }
 
