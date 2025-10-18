@@ -12,9 +12,9 @@ const profiles = [
     },
     {
         index: 1,
-        img: "./assets/channels4_profile2.jpeg",
-        name: "Daa Space Dude",
-        handle: "@Daa_Space_Dude",
+        img: "./assets/channels4_profile2.png",
+        name: "Space Talk 101",
+        handle: "@Space_Talk_101",
         postedAt: 'just now'
     }
 ]
@@ -365,7 +365,7 @@ async function twitterPostHandler() {
             tpImageContainer.classList.add('shake-image');
         }
 
-        if (profiles[selectedProfileIndex].handle === '@Daa_Space_Dude') {
+        if (profiles[selectedProfileIndex].handle === '@Space_Talk_101') {
             const tpUserDataEl = document.getElementById('tp-user-data');
             tpUserDataEl.style.background = 'yellow';
             tpUserDataEl.style.color = 'black';
@@ -373,6 +373,7 @@ async function twitterPostHandler() {
             postedAtEl.style.color = '#656565';
             tpCaptionContainerEl.style.backgroundColor = 'yellow';
             tpCaptionContainerEl.style.color = 'black';
+            tpProfileImageEl.style.border = '1px solid #6f6f6f';
         }
     }
 
