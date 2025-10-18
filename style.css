@@ -839,9 +839,11 @@ textarea {
     background-color: #000;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
     height: 95vh;
-    margin-top: -20px;
+    padding-top: 50px;
+    overflow: hidden;
+    /* justify-content: center; */
+    /* margin-top: -20px; */
 }
 
 .tp-user-image {
@@ -859,8 +861,24 @@ textarea {
     width: 100vw;
 }
 
+.tp-video-styles {
+    margin-top: 40px;
+    background: #282828;
+    color: #dfdfdf;
+    padding: 10px;
+    width: 280px;
+    border-radius: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .tp-caption-container {
-    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    z-index: 1;
+    background: #000;
 }
 
 .tp-caption {
@@ -874,8 +892,11 @@ textarea {
     align-items: center;
     padding: 20px;
     padding-bottom: 0;
-    width: 90%;
+    padding-top: 10px;
+    width: calc(100% - 40px);
     font-size: 12px;
+    z-index: 1;
+    background: #000;
 }
 
 .tp-username {
@@ -889,7 +910,7 @@ textarea {
 }
 
 .tp-posted-at {
-    margin-top: 13px;
+    margin-top: 15px;
     color: #9e9e9e;
     margin-left: 8px;
 }
@@ -910,7 +931,7 @@ textarea {
 .tp-video {
     display: none;
     width: 100%;
-    max-height: 50vh;
+    /* max-height: 50vh; */
 }
 
 .credit {
@@ -981,7 +1002,8 @@ textarea {
 
 .tp-profile-options {
     display: flex;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
     margin-top: 10px;
 }
 
@@ -991,14 +1013,26 @@ textarea {
 }
 
 .tp-option {
-    margin-right: 30px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
 
+.tp-option-label {
+    font-size: 20px;
+}
+
+.tp-top-right {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    color: #909090;
+    cursor: pointer;
+}
+
 .tp-option-radio {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 }
 
 .faded-text {
@@ -1013,36 +1047,47 @@ textarea {
     0% {
         transform: translate(0px, 0px) rotate(0deg) scale(1);
     }
+
     10% {
         transform: translate(-0.5px, 0.2px) rotate(-0.5deg) scale(1.005);
     }
+
     20% {
         transform: translate(-0.2px, -0.5px) rotate(0.5deg) scale(0.995);
     }
+
     30% {
         transform: translate(0.5px, 0.2px) rotate(0deg) scale(1.01);
     }
+
     40% {
         transform: translate(0.2px, -0.2px) rotate(0.5deg) scale(1);
     }
+
     50% {
         transform: translate(-0.2px, 0.5px) rotate(-0.5deg) scale(0.99);
     }
+
     60% {
         transform: translate(-0.5px, 0.2px) rotate(0deg) scale(1.005);
     }
+
     70% {
         transform: translate(0.5px, 0.2px) rotate(-0.5deg) scale(1);
     }
+
     80% {
         transform: translate(-0.2px, -0.2px) rotate(0.5deg) scale(1.005);
     }
+
     90% {
         transform: translate(0.2px, 0.5px) rotate(0deg) scale(0.995);
     }
+
     100% {
         transform: translate(0px, 0px) rotate(0deg) scale(1);
     }
+
     /* 10% {
         transform: translate(-1px, 0.5px) rotate(-1deg) scale(1.01);
     }
@@ -1076,3 +1121,71 @@ textarea {
 }
 
 
+
+
+.close-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+close-btn:hover {
+    background: #0056b3;
+}
+
+/* 🔹 Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* hidden by default */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 Popup Box */
+.popup-box {
+    background: #424242;
+    padding: 20px;
+    width: 300px;
+    max-width: 80%;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-box h2 {
+    margin-top: 0;
+}
+
+.close-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #282828;
+    color: #dfdfdf;
+    border: 1px solid #7b7b7b;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

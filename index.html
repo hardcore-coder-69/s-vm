@@ -46,7 +46,7 @@
         </div>
 
 
-        <div class="image-tags-container">
+        <div class="image-tags-container" style="display: none;">
             <label for="fileInput">Upload Image</label>
             <input type="file" accept="image/*" id="fileInput">
             <textarea id="imageStyles" name="imageStyles" class="imageStyles"
@@ -75,11 +75,11 @@
                 <div class="tp-profile-select">Select profile:</div>
                 <div class="tp-profile-options">
                     <div class="tp-option">
-                        <span>SpaceExploration</span>
+                        <span class="tp-option-label">SpaceExploration</span>
                         <input class="tp-option-radio" type="radio" name="profile" value="0" checked>
                     </div>
                     <div class="tp-option">
-                        <span>HardcoreCoder</span>
+                        <span class="tp-option-label">Daa Space Dude</span>
                         <input class="tp-option-radio" type="radio" name="profile" value="1">
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                 </button>
             </div>
 
-            <div class="tp-upload-video-container" style="display: none;">
+            <div class="tp-upload-video-container" style="display: block;">
                 <label for="videoInput">Upload Video</label>
                 <input type="file" accept="video/*" id="videoInput" class="videoInput">
                 <input type="text" id="credit" class="credit" placeholder="Video credit">
@@ -112,7 +112,7 @@
                 <input type="checkbox" class="tp-appear-checkbox" id="tp-appear-checkbox">
             </div>
         </div>
-        
+
         <div class="tp-blink-screen">
             <div class="tp-blink-screen-label">Blink Screen</div>
             <input type="checkbox" class="tp-blink-screen-checkbox" id="tp-blink-checkbox">
@@ -122,7 +122,7 @@
             <div class="tp-blink-screen-label">Shake Image</div>
             <input type="checkbox" class="tp-blink-screen-checkbox" id="shake-image">
         </div>
-        
+
         <label for="audio-upload">Audio?</label>
         <input type="file" id="audio-upload" accept="audio/*" />
 
@@ -150,9 +150,9 @@
             <img src="" class="real-changing-image" id="real-changing-image">
         </div>
     </div>
-
+    
     <div class="twitter-post-container" id="twitter-post-container">
-        <div class="tp-user-data">
+        <div class="tp-user-data" id="tp-user-data">
             <div class="tp-top-left">
                 <img src="./assets/channels4_profile.jpg" class="tp-user-image" id="tp-user-image">
                 <div class="tp-name-username-cont">
@@ -160,10 +160,16 @@
                     <div class="tp-username" id="tp-username">@SpaceExploration3</div>
                 </div>
             </div>
-            <div class="tp-posted-at"><span class="tp-just-now-dot">•</span>just after big bang</div>
+            <div class="tp-posted-at"><span class="tp-just-now-dot">•</span>
+                <span id="posted-at-text">just after big bang</span>
+            </div>
+
+            <div class="tp-top-right" id="openPopupBtn">
+                <span>&vellip;</span>
+            </div>
         </div>
 
-        <div class="tp-caption-container">
+        <div class="tp-caption-container" id="tp-caption-container">
             <div class="tp-caption" id="tp-caption"></div>
         </div>
 
@@ -186,9 +192,3 @@
 
 
 </html>
-
-
-
-
-
-

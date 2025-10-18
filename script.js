@@ -7,13 +7,15 @@ const profiles = [
         index: 0,
         img: "./assets/channels4_profile.jpg",
         name: "SpaceExploration",
-        handle: "SpaceExploration3"
+        handle: "@SpaceExploration3",
+        postedAt: 'just after big bang'
     },
     {
         index: 1,
-        img: "./assets/channels4_profile2.jpg",
-        name: "HardcoreCoder",
-        handle: "HardcoreCoder"
+        img: "./assets/channels4_profile2.jpeg",
+        name: "Daa Space Dude",
+        handle: "@Daa_Space_Dude",
+        postedAt: 'just now'
     }
 ]
 let selectedProfileIndex = 0;
@@ -124,7 +126,7 @@ async function uploadHandler() {
         };
     }
 
-    if(!bgImage && !file) {
+    if (!bgImage && !file) {
         textOnly = true;
     } else {
         textOnly = false;
@@ -159,7 +161,7 @@ async function addVideoText() {
             videoTextEl.style.fontSize = `${textSizeEl.value}px`;
             videoTextEl.innerText = videoTextInputEl.value;
 
-            if(textOnly) {
+            if (textOnly) {
                 videoTextEl.classList.add('extra-spacing');
             }
         }
@@ -335,18 +337,23 @@ async function twitterPostHandler() {
     const tpUploadImageEl = document.getElementById('tp-upload-image');
     const tpUploadVideoEl = document.getElementById('videoInput');
     const tpTextSizeEl = document.getElementById('tp-text-size');
+
     const tpImage = tpUploadImageEl.files[0];
     const tpVideo = tpUploadVideoEl.files[0];
     if (tpTextInputEl.value || tpImage || tpVideo) {
         tpContainerEl.style.display = 'flex';
         tpContainerEl.requestFullscreen();
         await sleep(5);
+        const tpCaptionContainerEl = document.getElementById('tp-caption-container');
         const tpProfileImageEl = document.getElementById('tp-user-image');
         const tpProfileNameEl = document.getElementById('tp-name');
         const tpProfileUsernameEl = document.getElementById('tp-username');
+        const postedAtEl = document.getElementById('posted-at-text');
+
         tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
         tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
         tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
+        postedAtEl.innerText = profiles[selectedProfileIndex].postedAt;
         const tpBlinkCheckEl = document.getElementById('tp-blink-checkbox');
         if (tpBlinkCheckEl && tpBlinkCheckEl.checked) {
             tpContainerEl.classList.add('blink');
@@ -357,11 +364,21 @@ async function twitterPostHandler() {
             const tpImageContainer = document.getElementById('tp-image-container');
             tpImageContainer.classList.add('shake-image');
         }
+
+        if (profiles[selectedProfileIndex].handle === '@Daa_Space_Dude') {
+            const tpUserDataEl = document.getElementById('tp-user-data');
+            tpUserDataEl.style.background = 'yellow';
+            tpUserDataEl.style.color = 'black';
+            tpProfileUsernameEl.style.color = '#656565';
+            postedAtEl.style.color = '#656565';
+            tpCaptionContainerEl.style.backgroundColor = 'yellow';
+            tpCaptionContainerEl.style.color = 'black';
+        }
     }
 
     if (tpTextInputEl.value) {
         const tpCaptionEl = document.getElementById('tp-caption');
-        if(tpTextSizeEl && tpTextSizeEl.value) {
+        if (tpTextSizeEl && tpTextSizeEl.value) {
             tpCaptionEl.style.fontSize = `${tpTextSizeEl.value}px`;
         }
         tpCaptionEl.innerText = tpTextInputEl.value;
@@ -395,7 +412,7 @@ async function twitterPostHandler() {
         tpVideoEl.src = URL.createObjectURL(tpVideo);
         const videoCreditEl = document.getElementById('credit');
         const tpVideoCreditEl = document.getElementById('tp-video-credit');
-        if(videoCreditEl && videoCreditEl.value) {
+        if (videoCreditEl && videoCreditEl.value) {
             tpVideoCreditEl.innerHTML = `<img src="./assets/video-image.png" class="credit-text-icon"> ${videoCreditEl.value}`;
         }
 
@@ -415,10 +432,13 @@ async function twitterPostHandler() {
             tpVideoCreditEl.classList.remove('appear-animation');
         } else {
             tpVideoEl.style.display = 'block';
+            tpVideoEl.loop = true;
+            tpVideoEl.play();
         }
     }
+    popupHandler();
 
-    if(!tpImage && !tpVideo) {
+    if (!tpImage && !tpVideo) {
         tpContainerEl.classList.add('extra-spacing');
     }
 }
@@ -460,6 +480,53 @@ function addNewTPAnimationHandler() {
     transformRowsContainerEl.append(newRowEl);
     divEl.remove();
     animationRowCount++;
+}
+
+async function tpVideoStyleUpdate() {
+    const tpVideoContainerEl = document.getElementById('tp-video-container');
+    const tpVideoStylesEl = document.getElementById('tp-video-styles');
+    if (tpVideoStylesEl && tpVideoStylesEl.value) {
+        let oldStyles = tpVideoContainerEl.getAttribute('style') || '';
+        let updatedStyles = oldStyles + tpVideoStylesEl.value;
+        tpVideoContainerEl.setAttribute('style', updatedStyles);
+    }
+
+    const popup = document.getElementById('popup');
+    if(popup) {
+        popup.style.display = 'none';
+    }
+}
+
+async function popupHandler() {
+    let popupUI = `<div class="popup-overlay" id="popup">
+        <div class="popup-box">
+            <textarea id="tp-video-styles" name="tp-video-styles" class="tp-video-styles"
+                placeholder="transform: scale(1.5) translateY(50px);" rows="3" cols="40">transform: scale(1.5);</textarea>
+            <button class="close-btn" id="closePopupBtn">Apply</button>
+        </div>
+    </div>`;
+
+    let tpContainerEl = document.getElementById('twitter-post-container');
+    tpContainerEl.insertAdjacentHTML('beforeend', popupUI);
+    
+    
+    const openBtn = document.getElementById('openPopupBtn');
+    const closeBtn = document.getElementById('closePopupBtn');
+    const popup = document.getElementById('popup');
+
+    openBtn.addEventListener('click', () => {
+        popup.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        tpVideoStyleUpdate();
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            tpVideoStyleUpdate();
+        }
+    });
 }
 
 
