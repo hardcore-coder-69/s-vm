@@ -496,11 +496,56 @@ async function tpVideoStyleUpdate() {
     if(popup) {
         popup.style.display = 'none';
     }
+
+    if (true) {
+        const tpUserDataEl = document.getElementById('tp-user-data');
+        const tpCaptionContainerEl = document.getElementById('tp-caption-container');
+        const tpProfileUsernameEl = document.getElementById('tp-username');
+        const postedAtEl = document.getElementById('posted-at-text');
+        const tpProfileImageEl = document.getElementById('tp-user-image');
+        const tpProfileNameEl = document.getElementById('tp-name');
+
+        tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
+        tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
+        tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
+        postedAtEl.innerText = profiles[selectedProfileIndex].postedAt;
+
+        if(profiles[selectedProfileIndex].handle === '@Space_Talk_101') {
+            tpUserDataEl.style.background = 'yellow';
+            tpUserDataEl.style.color = 'black';
+            tpProfileUsernameEl.style.color = '#656565';
+            postedAtEl.style.color = '#656565';
+            tpCaptionContainerEl.style.backgroundColor = 'yellow';
+            tpCaptionContainerEl.style.color = 'black';
+            tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        } else {
+            tpUserDataEl.style.background = 'black';
+            tpUserDataEl.style.color = 'unset';
+            tpProfileUsernameEl.style.color = '#a5a5a5';
+            postedAtEl.style.color = '#9e9e9e';
+            tpCaptionContainerEl.style.backgroundColor = 'black';
+            tpCaptionContainerEl.style.color = 'unset';
+            tpProfileImageEl.style.border = 'none';
+        }
+    }
 }
 
 async function popupHandler() {
     let popupUI = `<div class="popup-overlay" id="popup">
         <div class="popup-box">
+            <div class="tp-profile-card">
+                <div class="tp-profile-select">Switch profile</div>
+                <div class="tp-profile-options">
+                    <div class="tp-option">
+                        <span class="tp-option-label">SpaceExploration</span>
+                        <input class="tp-option-radio" type="radio" name="switch-profile" value="0" ${selectedProfileIndex == 0 ? 'checked' : ''}>
+                    </div>
+                    <div class="tp-option">
+                        <span class="tp-option-label">Space Talk 101</span>
+                        <input class="tp-option-radio" type="radio" name="switch-profile" value="1" ${selectedProfileIndex == 1 ? 'checked' : ''}>
+                    </div>
+                </div>
+            </div>
             <textarea id="tp-video-styles" name="tp-video-styles" class="tp-video-styles"
                 placeholder="transform: scale(1.5) translateY(50px);" rows="3" cols="40">transform: scale(1.5);</textarea>
             <button class="close-btn" id="closePopupBtn">Apply</button>
@@ -517,6 +562,7 @@ async function popupHandler() {
 
     openBtn.addEventListener('click', () => {
         popup.style.display = 'flex';
+        bindChangeEventsToProfileRadios();
     });
 
     closeBtn.addEventListener('click', () => {
@@ -530,6 +576,16 @@ async function popupHandler() {
     });
 }
 
+function bindChangeEventsToProfileRadios() {
+    const profileRadios = document.querySelectorAll('input[name="switch-profile"]');
+    profileRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) {
+                selectedProfileIndex = radio.value;
+            }
+        });
+    });    
+}
 
 const profileRadios = document.querySelectorAll('input[name="profile"]');
 profileRadios.forEach(radio => {
