@@ -14,7 +14,7 @@ const profiles = [
         index: 1,
         img: "./assets/channels4_profile2.png",
         name: "Space Talk 101",
-        handle: "@Space_Talk_101",
+        handle: "@SpaceTalk101",
         postedAt: 'just now'
     }
 ]
@@ -365,7 +365,7 @@ async function twitterPostHandler() {
             tpImageContainer.classList.add('shake-image');
         }
 
-        if (profiles[selectedProfileIndex].handle === '@Space_Talk_101') {
+        if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             const tpUserDataEl = document.getElementById('tp-user-data');
             tpUserDataEl.style.background = 'yellow';
             tpUserDataEl.style.color = 'black';
@@ -510,7 +510,7 @@ async function tpVideoStyleUpdate() {
         tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
         postedAtEl.innerText = profiles[selectedProfileIndex].postedAt;
 
-        if(profiles[selectedProfileIndex].handle === '@Space_Talk_101') {
+        if(profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpUserDataEl.style.background = 'yellow';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
