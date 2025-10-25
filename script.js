@@ -16,6 +16,13 @@ const profiles = [
         name: "Space Talk 101",
         handle: "@SpaceTalk101",
         postedAt: 'just now'
+    },
+    {
+        index: 2,
+        img: "./assets/channel_profile_3.png",
+        name: "Space Nerds",
+        handle: "@Space_Nerds_101",
+        postedAt: 'few seconds ago'
     }
 ]
 let selectedProfileIndex = 0;
@@ -374,6 +381,15 @@ async function twitterPostHandler() {
             tpCaptionContainerEl.style.backgroundColor = 'yellow';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
+            const tpUserDataEl = document.getElementById('tp-user-data');
+            tpUserDataEl.style.background = '#00FF00';
+            tpUserDataEl.style.color = 'black';
+            tpProfileUsernameEl.style.color = '#656565';
+            postedAtEl.style.color = '#656565';
+            tpCaptionContainerEl.style.backgroundColor = '#00FF00';
+            tpCaptionContainerEl.style.color = 'black';
+            tpProfileImageEl.style.border = '1px solid #6f6f6f';
         }
     }
 
@@ -493,7 +509,7 @@ async function tpVideoStyleUpdate() {
     }
 
     const popup = document.getElementById('popup');
-    if(popup) {
+    if (popup) {
         popup.style.display = 'none';
     }
 
@@ -510,12 +526,20 @@ async function tpVideoStyleUpdate() {
         tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
         postedAtEl.innerText = profiles[selectedProfileIndex].postedAt;
 
-        if(profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
+        if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpUserDataEl.style.background = 'yellow';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
             tpCaptionContainerEl.style.backgroundColor = 'yellow';
+            tpCaptionContainerEl.style.color = 'black';
+            tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
+            tpUserDataEl.style.background = '#00FF00';
+            tpUserDataEl.style.color = 'black';
+            tpProfileUsernameEl.style.color = '#656565';
+            postedAtEl.style.color = '#656565';
+            tpCaptionContainerEl.style.backgroundColor = '#00FF00';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else {
@@ -544,6 +568,10 @@ async function popupHandler() {
                         <span class="tp-option-label">Space Talk 101</span>
                         <input class="tp-option-radio" type="radio" name="switch-profile" value="1" ${selectedProfileIndex == 1 ? 'checked' : ''}>
                     </div>
+                    <div class="tp-option">
+                        <span class="tp-option-label">Space Nerds</span>
+                        <input class="tp-option-radio" type="radio" name="switch-profile" value="2" ${selectedProfileIndex == 2 ? 'checked' : ''}>
+                    </div>
                 </div>
             </div>
             <textarea id="tp-video-styles" name="tp-video-styles" class="tp-video-styles"
@@ -554,8 +582,8 @@ async function popupHandler() {
 
     let tpContainerEl = document.getElementById('twitter-post-container');
     tpContainerEl.insertAdjacentHTML('beforeend', popupUI);
-    
-    
+
+
     const openBtn = document.getElementById('openPopupBtn');
     const closeBtn = document.getElementById('closePopupBtn');
     const popup = document.getElementById('popup');
@@ -584,7 +612,7 @@ function bindChangeEventsToProfileRadios() {
                 selectedProfileIndex = radio.value;
             }
         });
-    });    
+    });
 }
 
 const profileRadios = document.querySelectorAll('input[name="profile"]');
