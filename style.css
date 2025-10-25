@@ -926,6 +926,7 @@ textarea {
 
 .tp-video-container {
     display: none;
+    transform: translateY(-30px);
 }
 
 .tp-video {
@@ -1188,4 +1189,5 @@ close-btn:hover {
         transform: scale(1);
         opacity: 1;
     }
+
 }
