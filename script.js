@@ -383,11 +383,11 @@ async function twitterPostHandler() {
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
             const tpUserDataEl = document.getElementById('tp-user-data');
-            tpUserDataEl.style.background = '#ffd968';
+            tpUserDataEl.style.background = '#fff';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = '#ffd968';
+            tpCaptionContainerEl.style.backgroundColor = '#fff';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         }
@@ -535,11 +535,11 @@ async function tpVideoStyleUpdate() {
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
-            tpUserDataEl.style.background = '#ffd968';
+            tpUserDataEl.style.background = '#fff';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = '#ffd968';
+            tpCaptionContainerEl.style.backgroundColor = '#fff';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else {
@@ -575,7 +575,7 @@ async function popupHandler() {
                 </div>
             </div>
             <textarea id="tp-video-styles" name="tp-video-styles" class="tp-video-styles"
-                placeholder="transform: scale(1.5) translateY(50px);" rows="3" cols="40">transform: scale(1.5);</textarea>
+                placeholder="transform: scale(1.5) translateY(50px);" rows="3" cols="40">transform: scale(1) translateY(-30px);</textarea>
             <button class="close-btn" id="closePopupBtn">Apply</button>
         </div>
     </div>`;

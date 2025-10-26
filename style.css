@@ -926,7 +926,7 @@ textarea {
 
 .tp-video-container {
     display: none;
-    transform: translateY(-30px);
+    transform: scale(1) translateY(-30px);
 }
 
 .tp-video {
