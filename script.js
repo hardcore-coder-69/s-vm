@@ -383,11 +383,11 @@ async function twitterPostHandler() {
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
             const tpUserDataEl = document.getElementById('tp-user-data');
-            tpUserDataEl.style.background = '#00FF00';
+            tpUserDataEl.style.background = '#ffd968';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = '#00FF00';
+            tpCaptionContainerEl.style.backgroundColor = '#ffd968';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         }
@@ -535,11 +535,11 @@ async function tpVideoStyleUpdate() {
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
-            tpUserDataEl.style.background = '#00FF00';
+            tpUserDataEl.style.background = '#ffd968';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = '#00FF00';
+            tpCaptionContainerEl.style.backgroundColor = '#ffd968';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else {
