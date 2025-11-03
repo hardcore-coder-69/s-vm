@@ -374,11 +374,11 @@ async function twitterPostHandler() {
 
         const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            tpUserDataEl.style.background = 'cyan';
+            tpUserDataEl.style.background = '#c1c4ffff';
             tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = 'rgb(113 113 113)';
-            postedAtEl.style.color = 'rgb(113 113 113)';
-            tpCaptionContainerEl.style.backgroundColor = 'cyan';
+            tpProfileUsernameEl.style.color = 'rgb(90 90 90)';
+            postedAtEl.style.color = 'rgb(90 90 90)';
+            tpCaptionContainerEl.style.backgroundColor = '#c1c4ffff';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
@@ -534,11 +534,11 @@ async function tpVideoStyleUpdate() {
         
         const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            tpUserDataEl.style.background = 'cyan';
+            tpUserDataEl.style.background = '#c1c4ffff';
             tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = 'rgb(113 113 113)';
-            postedAtEl.style.color = 'rgb(113 113 113)';
-            tpCaptionContainerEl.style.backgroundColor = 'cyan';
+            tpProfileUsernameEl.style.color = 'rgb(90 90 90)';
+            postedAtEl.style.color = 'rgb(90 90 90)';
+            tpCaptionContainerEl.style.backgroundColor = '#c1c4ffff';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
@@ -659,4 +659,5 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
