@@ -372,8 +372,8 @@ async function twitterPostHandler() {
             tpImageContainer.classList.add('shake-image');
         }
 
+        const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            const tpUserDataEl = document.getElementById('tp-user-data');
             tpUserDataEl.style.background = 'cyan';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = 'rgb(113 113 113)';
@@ -382,7 +382,6 @@ async function twitterPostHandler() {
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
-            const tpUserDataEl = document.getElementById('tp-user-data');
             tpUserDataEl.style.background = 'yellow';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
@@ -391,7 +390,6 @@ async function twitterPostHandler() {
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
-            const tpUserDataEl = document.getElementById('tp-user-data');
             tpUserDataEl.style.background = '#fff';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
@@ -523,20 +521,19 @@ async function tpVideoStyleUpdate() {
     }
 
     if (true) {
-        const tpUserDataEl = document.getElementById('tp-user-data');
         const tpCaptionContainerEl = document.getElementById('tp-caption-container');
         const tpProfileUsernameEl = document.getElementById('tp-username');
         const postedAtEl = document.getElementById('posted-at-text');
         const tpProfileImageEl = document.getElementById('tp-user-image');
         const tpProfileNameEl = document.getElementById('tp-name');
-
+        
         tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
         tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
         tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
         postedAtEl.innerText = profiles[selectedProfileIndex].postedAt;
-
+        
+        const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            const tpUserDataEl = document.getElementById('tp-user-data');
             tpUserDataEl.style.background = 'cyan';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = 'rgb(113 113 113)';
