@@ -1009,8 +1009,8 @@ textarea {
 }
 
 .extra-spacing {
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
 }
 
 .tp-option {
@@ -1191,3 +1191,4 @@ close-btn:hover {
     }
 
 }
+
