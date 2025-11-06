@@ -5,6 +5,10 @@ body {
     margin: 0;
 }
 
+br {
+    line-height: 10px !important;
+}
+
 #fileInput,
 #bg-image,
 #audio-upload {
@@ -1191,4 +1195,5 @@ close-btn:hover {
     }
 
 }
+
 
