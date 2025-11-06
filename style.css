@@ -6,7 +6,7 @@ body {
 }
 
 br {
-    line-height: 10px !important;
+    line-height: 5px !important;
 }
 
 #fileInput,
@@ -1195,5 +1195,6 @@ close-btn:hover {
     }
 
 }
+
 
 
