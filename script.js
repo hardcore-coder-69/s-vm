@@ -5,7 +5,7 @@ shockedSoundEffectEl.load();
 const profiles = [
     {
         index: 0,
-        img: "./assets/channels4_profile_new.png",
+        img: "./assets/channels4_profile_new_new.png",
         name: "SpaceExploration",
         handle: "@SpaceExploration3",
         postedAt: 'just after big bang'
@@ -374,12 +374,12 @@ async function twitterPostHandler() {
 
         const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            tpUserDataEl.style.background = 'black';
-            tpUserDataEl.style.color = 'white';
-            tpProfileUsernameEl.style.color = '#a5a5a5';
-            postedAtEl.style.color = '#a5a5a5';
-            tpCaptionContainerEl.style.backgroundColor = 'black';
-            tpCaptionContainerEl.style.color = 'white';
+            tpUserDataEl.style.background = '#fbc117';
+            tpUserDataEl.style.color = 'black';
+            tpProfileUsernameEl.style.color = '#656565';
+            postedAtEl.style.color = '#656565';
+            tpCaptionContainerEl.style.backgroundColor = '#fbc117';
+            tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpUserDataEl.style.background = 'yellow';
@@ -534,12 +534,12 @@ async function tpVideoStyleUpdate() {
         
         const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            tpUserDataEl.style.background = 'black';
-            tpUserDataEl.style.color = 'white';
-            tpProfileUsernameEl.style.color = '#a5a5a5';
-            postedAtEl.style.color = '#a5a5a5';
-            tpCaptionContainerEl.style.backgroundColor = 'black';
-            tpCaptionContainerEl.style.color = 'white';
+            tpUserDataEl.style.background = '#fbc117';
+            tpUserDataEl.style.color = 'black';
+            tpProfileUsernameEl.style.color = '#656565';
+            postedAtEl.style.color = '#656565';
+            tpCaptionContainerEl.style.backgroundColor = '#fbc117';
+            tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpUserDataEl.style.background = 'yellow';
