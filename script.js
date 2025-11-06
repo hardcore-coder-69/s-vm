@@ -376,8 +376,8 @@ async function twitterPostHandler() {
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
             tpUserDataEl.style.background = 'black';
             tpUserDataEl.style.color = 'white';
-            tpProfileUsernameEl.style.color = 'rgb(90 90 90)';
-            postedAtEl.style.color = 'rgb(90 90 90)';
+            tpProfileUsernameEl.style.color = '#a5a5a5';
+            postedAtEl.style.color = '#a5a5a5';
             tpCaptionContainerEl.style.backgroundColor = 'black';
             tpCaptionContainerEl.style.color = 'white';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
@@ -536,8 +536,8 @@ async function tpVideoStyleUpdate() {
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
             tpUserDataEl.style.background = 'black';
             tpUserDataEl.style.color = 'white';
-            tpProfileUsernameEl.style.color = 'rgb(90 90 90)';
-            postedAtEl.style.color = 'rgb(90 90 90)';
+            tpProfileUsernameEl.style.color = '#a5a5a5';
+            postedAtEl.style.color = '#a5a5a5';
             tpCaptionContainerEl.style.backgroundColor = 'black';
             tpCaptionContainerEl.style.color = 'white';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
@@ -659,6 +659,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
