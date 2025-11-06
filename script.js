@@ -5,7 +5,7 @@ shockedSoundEffectEl.load();
 const profiles = [
     {
         index: 0,
-        img: "./assets/channels4_profile.jpg",
+        img: "./assets/channels4_profile_new.png",
         name: "SpaceExploration",
         handle: "@SpaceExploration3",
         postedAt: 'just after big bang'
@@ -659,6 +659,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
