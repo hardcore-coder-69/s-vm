@@ -374,12 +374,12 @@ async function twitterPostHandler() {
 
         const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            tpUserDataEl.style.background = 'black';
-            tpUserDataEl.style.color = 'white';
+            tpUserDataEl.style.background = '#FBC117';
+            tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = 'rgb(90 90 90)';
             postedAtEl.style.color = 'rgb(90 90 90)';
-            tpCaptionContainerEl.style.backgroundColor = 'black';
-            tpCaptionContainerEl.style.color = 'white';
+            tpCaptionContainerEl.style.backgroundColor = '#FBC117';
+            tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpUserDataEl.style.background = 'yellow';
@@ -534,12 +534,12 @@ async function tpVideoStyleUpdate() {
         
         const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            tpUserDataEl.style.background = 'black';
-            tpUserDataEl.style.color = 'white';
+            tpUserDataEl.style.background = '#FBC117';
+            tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = 'rgb(90 90 90)';
             postedAtEl.style.color = 'rgb(90 90 90)';
-            tpCaptionContainerEl.style.backgroundColor = 'black';
-            tpCaptionContainerEl.style.color = 'white';
+            tpCaptionContainerEl.style.backgroundColor = '#FBC117';
+            tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpUserDataEl.style.background = 'yellow';
@@ -659,6 +659,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
