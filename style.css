@@ -5,8 +5,9 @@ body {
     margin: 0;
 }
 
-br {
-    line-height: 5px !important;
+.replaced-br {
+    display: block;
+    height: 6px;
 }
 
 #fileInput,

@@ -406,6 +406,7 @@ async function twitterPostHandler() {
             tpCaptionEl.style.fontSize = `${tpTextSizeEl.value}px`;
         }
         tpCaptionEl.innerText = tpTextInputEl.value;
+        formatHTML(tpCaptionEl);
     }
     if (tpImage) {
         const reader = new FileReader();
@@ -488,6 +489,18 @@ async function tpAnimationsHandler() {
     }
 }
 
+function formatHTML(element) {
+    if (!element) return;
+    
+    const brs = Array.from(element.querySelectorAll('br'));
+    brs.forEach(br => {
+        const span = document.createElement('span');
+        span.className = 'replaced-br';
+        span.innerHTML = '&nbsp;';
+        br.replaceWith(span);
+    });
+}
+
 function addNewTPAnimationHandler() {
     const transformRowsContainerEl = document.getElementById("tp-transform-rows-container");
 
@@ -526,12 +539,12 @@ async function tpVideoStyleUpdate() {
         const postedAtEl = document.getElementById('posted-at-text');
         const tpProfileImageEl = document.getElementById('tp-user-image');
         const tpProfileNameEl = document.getElementById('tp-name');
-        
+
         tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
         tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
         tpProfileUsernameEl.innerText = profiles[selectedProfileIndex].handle;
         postedAtEl.innerText = profiles[selectedProfileIndex].postedAt;
-        
+
         const tpUserDataEl = document.getElementById('tp-user-data');
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
             tpUserDataEl.style.background = '#fbc117';
