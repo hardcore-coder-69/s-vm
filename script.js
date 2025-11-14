@@ -20,8 +20,8 @@ const profiles = [
     {
         index: 2,
         img: "./assets/channel_profile_3.png",
-        name: "Space Nerds",
-        handle: "@Space_Nerds_101",
+        name: "Let's Talk Space",
+        handle: "@Lets_Talk_Space",
         postedAt: 'few seconds ago'
     }
 ]
@@ -389,7 +389,7 @@ async function twitterPostHandler() {
             tpCaptionContainerEl.style.backgroundColor = 'yellow';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
+        } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
             tpUserDataEl.style.background = 'greenyellow';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
@@ -562,7 +562,7 @@ async function tpVideoStyleUpdate() {
             tpCaptionContainerEl.style.backgroundColor = 'yellow';
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        } else if (profiles[selectedProfileIndex].handle === '@Space_Nerds_101') {
+        } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
             tpUserDataEl.style.background = 'greenyellow';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
@@ -672,6 +672,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
