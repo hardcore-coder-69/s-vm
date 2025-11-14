@@ -589,7 +589,7 @@ async function popupHandler() {
                         <input class="tp-option-radio" type="radio" name="switch-profile" value="1" ${selectedProfileIndex == 1 ? 'checked' : ''}>
                     </div>
                     <div class="tp-option">
-                        <span class="tp-option-label">Space Nerds</span>
+                        <span class="tp-option-label">Let's Talk Space</span>
                         <input class="tp-option-radio" type="radio" name="switch-profile" value="2" ${selectedProfileIndex == 2 ? 'checked' : ''}>
                     </div>
                 </div>
@@ -672,6 +672,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
