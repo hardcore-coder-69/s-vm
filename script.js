@@ -390,12 +390,12 @@ async function twitterPostHandler() {
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
-            tpUserDataEl.style.background = 'greenyellow';
-            tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = '#656565';
-            postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = 'greenyellow';
-            tpCaptionContainerEl.style.color = 'black';
+            tpUserDataEl.style.background = 'black';
+            tpUserDataEl.style.color = 'white';
+            tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
+            postedAtEl.style.color = 'rgb(193 193 193)';
+            tpCaptionContainerEl.style.backgroundColor = 'black';
+            tpCaptionContainerEl.style.color = 'white';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         }
     }
@@ -563,12 +563,12 @@ async function tpVideoStyleUpdate() {
             tpCaptionContainerEl.style.color = 'black';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
-            tpUserDataEl.style.background = 'greenyellow';
-            tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = '#656565';
-            postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = 'greenyellow';
-            tpCaptionContainerEl.style.color = 'black';
+            tpUserDataEl.style.background = 'black';
+            tpUserDataEl.style.color = 'white';
+            tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
+            postedAtEl.style.color = 'rgb(193 193 193)';
+            tpCaptionContainerEl.style.backgroundColor = 'black';
+            tpCaptionContainerEl.style.color = 'white';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
         }
     }
@@ -672,6 +672,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
