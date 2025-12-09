@@ -466,6 +466,13 @@ async function twitterPostHandler() {
     if (!tpImage && !tpVideo) {
         tpContainerEl.classList.add('extra-spacing');
     }
+
+    if(!tpTextInputEl.value) {
+        const tpUserDataEl = document.getElementById('tp-user-data');
+        const tpCaptionContainerEl = document.getElementById('tp-caption-container');
+        tpUserDataEl.style.display = 'none';
+        tpCaptionContainerEl.style.display = 'none';
+    }
 }
 
 async function tpAnimationsHandler() {
@@ -672,6 +679,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
