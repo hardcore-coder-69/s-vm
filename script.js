@@ -470,8 +470,12 @@ async function twitterPostHandler() {
     if(!tpTextInputEl.value.trim()) {
         const tpUserDataEl = document.getElementById('tp-user-data');
         const tpCaptionContainerEl = document.getElementById('tp-caption-container');
+        const twitterPostContainerEl = document.getElementById('twitter-post-container');
+        
         tpUserDataEl.style.display = 'none';
         tpCaptionContainerEl.style.display = 'none';
+        twitterPostContainerEl.style.justifyContent = 'center';
+        twitterPostContainerEl.style.paddingTop = '200px';
     }
 }
 
@@ -679,6 +683,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
