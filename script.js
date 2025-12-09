@@ -467,7 +467,7 @@ async function twitterPostHandler() {
         tpContainerEl.classList.add('extra-spacing');
     }
 
-    if(!tpTextInputEl.value) {
+    if(!tpTextInputEl.value.trim()) {
         const tpUserDataEl = document.getElementById('tp-user-data');
         const tpCaptionContainerEl = document.getElementById('tp-caption-container');
         tpUserDataEl.style.display = 'none';
@@ -679,6 +679,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
