@@ -471,11 +471,14 @@ async function twitterPostHandler() {
         const tpUserDataEl = document.getElementById('tp-user-data');
         const tpCaptionContainerEl = document.getElementById('tp-caption-container');
         const twitterPostContainerEl = document.getElementById('twitter-post-container');
+        const tpImageContainerEl = document.getElementById('tp-image-container');
         
         tpUserDataEl.style.display = 'none';
         tpCaptionContainerEl.style.display = 'none';
         twitterPostContainerEl.style.justifyContent = 'center';
         twitterPostContainerEl.style.paddingTop = '200px';
+        tpImageContainerEl.style.overflow = 'unset';
+        tpImageContainerEl.style.maxHeight = 'unset';
     }
 }
 
@@ -683,6 +686,7 @@ async function startTyping({ textEl, text, typingSpeed }) {
     }
 
 }
+
 
 
 
