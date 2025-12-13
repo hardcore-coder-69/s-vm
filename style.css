@@ -297,10 +297,10 @@ textarea {
     justify-content: center;
 
     /* ROUNDED CORNERS */
-    margin-left: 10px;
+    /* margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    box-shadow: 0px 0px 30px 1px #8c8c8c;
+    box-shadow: 0px 0px 30px 1px #8c8c8c; */
 }
 
 @keyframes flyIn {
@@ -897,8 +897,8 @@ textarea {
     background: #000;
 
     /* ROUNDED CORNERS */
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
 }
 
 .tp-caption {
@@ -919,8 +919,8 @@ textarea {
     background: #000;
 
     /* ROUNDED CORNERS */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
 }
 
 .tp-username {
