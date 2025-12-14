@@ -867,6 +867,7 @@ textarea {
     width: 35px;
     border-radius: 50%;
     margin-right: 10px;
+    opacity: 0.8;
 }
 
 .tp-upload-image {
@@ -888,10 +889,10 @@ textarea {
 }
 
 .tp-caption-container {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
     width: calc(100% - 40px);
     z-index: 1;
     background: #000;
@@ -904,8 +905,9 @@ textarea {
 .tp-caption {
     font-size: 18px;
     font-weight: 500;
-    line-height: 120%;
+    line-height: 125%;
     letter-spacing: 0.5px;
+    transform: scaleY(1.2);
 }
 
 .tp-user-data {
@@ -928,6 +930,7 @@ textarea {
 .tp-name-username-cont {
     font-size: 12px;
     font-weight: 500;
+    transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
 .tp-username {
@@ -948,7 +951,8 @@ textarea {
 
 .tp-top-left {
     display: flex;
-    aline-items: center;
+    align-items: center;
+    margin-left: -20px;
 }
 
 .tp-image-container {
