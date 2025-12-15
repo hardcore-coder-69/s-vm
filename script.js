@@ -356,6 +356,7 @@ async function twitterPostHandler() {
         const tpProfileNameEl = document.getElementById('tp-name');
         const tpProfileUsernameEl = document.getElementById('tp-username');
         const postedAtEl = document.getElementById('posted-at-text');
+        const tpTopContainerEl = document.getElementById('tp-top-container');
 
         tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
         tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
@@ -376,6 +377,8 @@ async function twitterPostHandler() {
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
             tpContainerEl.style.backgroundColor = '#fbc117';
             tpUserDataEl.style.background = '#fbc117';
+            tpTopContainerEl.style.backgroundColor = '#fbc117';
+            tpTopContainerEl.style.background = '#fbc117';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
@@ -385,6 +388,8 @@ async function twitterPostHandler() {
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpContainerEl.style.backgroundColor = 'yellow';
             tpUserDataEl.style.background = 'yellow';
+            tpTopContainerEl.style.backgroundColor = 'yellow';
+            tpTopContainerEl.style.background = 'yellow';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
@@ -394,12 +399,18 @@ async function twitterPostHandler() {
         } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
             tpContainerEl.style.backgroundColor = 'black';
             tpUserDataEl.style.background = 'black';
+            tpTopContainerEl.style.backgroundColor = 'black';
+            tpTopContainerEl.style.background = 'black';
             tpUserDataEl.style.color = 'white';
             tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
             postedAtEl.style.color = 'rgb(193 193 193)';
             tpCaptionContainerEl.style.backgroundColor = 'black';
             tpCaptionContainerEl.style.color = 'white';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        }
+
+        if(isFullScreen()) {
+            tpContainerEl.style.backgroundColor = '#000';
         }
     }
 
@@ -483,6 +494,11 @@ async function twitterPostHandler() {
         tpImageContainerEl.style.overflow = 'unset';
         tpImageContainerEl.style.maxHeight = 'unset';
     }
+
+    if(tpVideo && !tpImage) {
+        const tpImageContainerEl = document.getElementById('tp-image-container');
+        tpImageContainerEl.style.display = 'none';
+    }
 }
 
 async function tpAnimationsHandler() {
@@ -557,6 +573,7 @@ async function tpVideoStyleUpdate() {
         const tpProfileImageEl = document.getElementById('tp-user-image');
         const tpProfileNameEl = document.getElementById('tp-name');
         const tpContainerEl = document.getElementById('twitter-post-container');
+        const tpTopContainerEl = document.getElementById('tp-top-container');
 
         tpProfileImageEl.setAttribute('src', profiles[selectedProfileIndex].img);
         tpProfileNameEl.innerText = profiles[selectedProfileIndex].name;
@@ -567,6 +584,8 @@ async function tpVideoStyleUpdate() {
         if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
             tpContainerEl.style.backgroundColor = '#fbc117';
             tpUserDataEl.style.background = '#fbc117';
+            tpTopContainerEl.style.backgroundColor = '#fbc117';
+            tpTopContainerEl.style.background = '#fbc117';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
@@ -576,6 +595,8 @@ async function tpVideoStyleUpdate() {
         } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
             tpContainerEl.style.backgroundColor = 'yellow';
             tpUserDataEl.style.background = 'yellow';
+            tpTopContainerEl.style.backgroundColor = 'yellow';
+            tpTopContainerEl.style.background = 'yellow';
             tpUserDataEl.style.color = 'black';
             tpProfileUsernameEl.style.color = '#656565';
             postedAtEl.style.color = '#656565';
@@ -585,12 +606,18 @@ async function tpVideoStyleUpdate() {
         } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
             tpContainerEl.style.backgroundColor = 'black';
             tpUserDataEl.style.background = 'black';
+            tpTopContainerEl.style.backgroundColor = 'black';
+            tpTopContainerEl.style.background = 'black';
             tpUserDataEl.style.color = 'white';
             tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
             postedAtEl.style.color = 'rgb(193 193 193)';
             tpCaptionContainerEl.style.backgroundColor = 'black';
             tpCaptionContainerEl.style.color = 'white';
             tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        }
+
+        if(isFullScreen()) {
+            tpContainerEl.style.backgroundColor = '#000';
         }
     }
 }
@@ -694,9 +721,9 @@ async function startTyping({ textEl, text, typingSpeed }) {
 
 }
 
-
-
-
+function isFullScreen() {
+    return window.innerWidth >= 1000;
+}
 
 
 

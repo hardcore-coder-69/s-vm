@@ -1240,3 +1240,55 @@ close-btn:hover {
     }
 
 }
+
+@media (min-width: 1000px) {
+    .twitter-post-container {
+        flex-direction: row;
+        align-items: center;
+        padding-top: 0px;
+    }
+
+    .tp-top-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tp-caption-container {
+        width: unset;
+    }
+
+    .tp-caption {
+        transform: none;
+        line-height: 130%;
+        opacity: 0.8;
+        font-size: 42px;
+    }
+
+    .tp-image-container {
+        width: 100%;
+        max-height: unset;
+    }
+
+    .tp-image {
+        width: 100%;
+    }
+
+    .tp-user-image {
+        height: 60px;
+        width: 60px;
+    }
+
+    .tp-name-username-cont {
+        font-size: 20px;
+    }
+
+    .tp-verified-icon {
+        height: 25px;
+        width: 25px;
+    }
+
+    .tp-video-container {
+        transform: none;
+        width: 100%;
+    }
+}
