@@ -903,11 +903,10 @@ textarea {
 }
 
 .tp-caption {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 125%;
     letter-spacing: 0.5px;
-    transform: scaleY(1.1);
 }
 
 .tp-user-data {
