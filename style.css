@@ -858,7 +858,7 @@ textarea {
     flex-direction: column;
     align-items: start;
     height: 95vh;
-    padding-top: 20px;
+    padding-top: 50px;
     overflow: hidden;
 }
 
