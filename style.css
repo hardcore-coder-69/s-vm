@@ -295,6 +295,8 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 40px;
+    width: 100%;
 
     /* ROUNDED CORNERS */
     /* margin-left: 10px;
@@ -858,7 +860,7 @@ textarea {
     flex-direction: column;
     align-items: start;
     height: 95vh;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     overflow: hidden;
 }
 
@@ -889,8 +891,8 @@ textarea {
 }
 
 .tp-caption-container {
-    padding-top: 25px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 10px;
     padding-left: 25px;
     padding-right: 25px;
     width: calc(100% - 40px);
@@ -905,8 +907,9 @@ textarea {
 .tp-caption {
     font-size: 20px;
     font-weight: 500;
-    line-height: 125%;
+    /* line-height: 125%; */
     letter-spacing: 0.5px;
+    transform: scaleY(1.02);
 }
 
 .tp-user-data {
