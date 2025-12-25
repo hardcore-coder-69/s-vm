@@ -905,8 +905,8 @@ textarea {
 }
 
 .tp-caption {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 22px;
+    /* font-weight: 500; */
     /* line-height: 125%; */
     letter-spacing: 0.5px;
     transform: scaleY(1.02);
