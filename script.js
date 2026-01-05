@@ -499,6 +499,11 @@ async function twitterPostHandler() {
         const tpImageContainerEl = document.getElementById('tp-image-container');
         tpImageContainerEl.style.display = 'none';
     }
+
+    if(tpImage && !tpVideo && !tpTextInputEl.value.trim()) {
+        const tpTopContainerEl = document.getElementById('tp-top-container');
+        tpTopContainerEl.style.display = 'none';
+    }
 }
 
 async function tpAnimationsHandler() {
