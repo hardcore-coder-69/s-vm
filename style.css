@@ -865,8 +865,8 @@ textarea {
 }
 
 .tp-user-image {
-    height: 35px;
-    width: 35px;
+    height: 45px;
+    width: 45px;
     border-radius: 50%;
     margin-right: 10px;
     opacity: 0.8;
@@ -930,13 +930,18 @@ textarea {
 }
 
 .tp-name-username-cont {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
+    /* transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); */
+}
+
+.tp-name {
     transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
 .tp-username {
     color: #a5a5a5;
+    transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
 .tp-just-now-dot {
@@ -1077,8 +1082,8 @@ textarea {
 }
 
 .tp-verified-icon {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     margin-left: 5px;
 }
 

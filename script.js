@@ -6,15 +6,15 @@ const profiles = [
     {
         index: 0,
         img: "./assets/channels4_profile_new_new.png",
-        name: "SpaceExploration",
-        handle: "@SpaceExploration3",
+        name: "The Space Files",
+        handle: "@TheSpaceFiles.1",
         postedAt: 'just after big bang'
     },
     {
         index: 1,
         img: "./assets/channels4_profile2.png",
-        name: "Space Talk 101",
-        handle: "@SpaceTalk101",
+        name: "Daa Vinci Files",
+        handle: "@DaaVinciFiles",
         postedAt: 'just now'
     },
     {
@@ -374,40 +374,37 @@ async function twitterPostHandler() {
         }
 
         const tpUserDataEl = document.getElementById('tp-user-data');
-        if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            // tpContainerEl.style.backgroundColor = '#fbc117';
-            tpUserDataEl.style.background = '#fbc117';
-            tpTopContainerEl.style.backgroundColor = '#fbc117';
-            tpTopContainerEl.style.background = '#fbc117';
-            tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = '#656565';
-            postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = '#fbc117';
-            tpCaptionContainerEl.style.color = 'black';
-            tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
-            // tpContainerEl.style.backgroundColor = 'yellow';
-            tpUserDataEl.style.background = 'yellow';
-            tpTopContainerEl.style.backgroundColor = 'yellow';
-            tpTopContainerEl.style.background = 'yellow';
-            tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = '#656565';
-            postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = 'yellow';
-            tpCaptionContainerEl.style.color = 'black';
-            tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
-            // tpContainerEl.style.backgroundColor = 'black';
-            tpUserDataEl.style.background = 'black';
-            tpTopContainerEl.style.backgroundColor = 'black';
-            tpTopContainerEl.style.background = 'black';
-            tpUserDataEl.style.color = 'white';
-            tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
-            postedAtEl.style.color = 'rgb(193 193 193)';
-            tpCaptionContainerEl.style.backgroundColor = 'black';
-            tpCaptionContainerEl.style.color = 'white';
-            tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        }
+        // if (profiles[selectedProfileIndex].handle === '@TheSpaceFiles.1') {
+        //     tpUserDataEl.style.background = '#fbc117';
+        //     tpTopContainerEl.style.backgroundColor = '#fbc117';
+        //     tpTopContainerEl.style.background = '#fbc117';
+        //     tpUserDataEl.style.color = 'black';
+        //     tpProfileUsernameEl.style.color = '#656565';
+        //     postedAtEl.style.color = '#656565';
+        //     tpCaptionContainerEl.style.backgroundColor = '#fbc117';
+        //     tpCaptionContainerEl.style.color = 'black';
+        //     tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        // } else if (profiles[selectedProfileIndex].handle === '@DaaVinciFiles') {
+        //     tpUserDataEl.style.background = 'yellow';
+        //     tpTopContainerEl.style.backgroundColor = 'yellow';
+        //     tpTopContainerEl.style.background = 'yellow';
+        //     tpUserDataEl.style.color = 'black';
+        //     tpProfileUsernameEl.style.color = '#656565';
+        //     postedAtEl.style.color = '#656565';
+        //     tpCaptionContainerEl.style.backgroundColor = 'yellow';
+        //     tpCaptionContainerEl.style.color = 'black';
+        //     tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        // } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
+        //     tpUserDataEl.style.background = 'black';
+        //     tpTopContainerEl.style.backgroundColor = 'black';
+        //     tpTopContainerEl.style.background = 'black';
+        //     tpUserDataEl.style.color = 'white';
+        //     tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
+        //     postedAtEl.style.color = 'rgb(193 193 193)';
+        //     tpCaptionContainerEl.style.backgroundColor = 'black';
+        //     tpCaptionContainerEl.style.color = 'white';
+        //     tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        // }
 
         if(isFullScreen()) {
             tpContainerEl.style.backgroundColor = '#000';
@@ -586,40 +583,37 @@ async function tpVideoStyleUpdate() {
         postedAtEl.innerText = profiles[selectedProfileIndex].postedAt;
 
         const tpUserDataEl = document.getElementById('tp-user-data');
-        if (profiles[selectedProfileIndex].handle === '@SpaceExploration3') {
-            // tpContainerEl.style.backgroundColor = '#fbc117';
-            tpUserDataEl.style.background = '#fbc117';
-            tpTopContainerEl.style.backgroundColor = '#fbc117';
-            tpTopContainerEl.style.background = '#fbc117';
-            tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = '#656565';
-            postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = '#fbc117';
-            tpCaptionContainerEl.style.color = 'black';
-            tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        } else if (profiles[selectedProfileIndex].handle === '@SpaceTalk101') {
-            // tpContainerEl.style.backgroundColor = 'yellow';
-            tpUserDataEl.style.background = 'yellow';
-            tpTopContainerEl.style.backgroundColor = 'yellow';
-            tpTopContainerEl.style.background = 'yellow';
-            tpUserDataEl.style.color = 'black';
-            tpProfileUsernameEl.style.color = '#656565';
-            postedAtEl.style.color = '#656565';
-            tpCaptionContainerEl.style.backgroundColor = 'yellow';
-            tpCaptionContainerEl.style.color = 'black';
-            tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
-            // tpContainerEl.style.backgroundColor = 'black';
-            tpUserDataEl.style.background = 'black';
-            tpTopContainerEl.style.backgroundColor = 'black';
-            tpTopContainerEl.style.background = 'black';
-            tpUserDataEl.style.color = 'white';
-            tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
-            postedAtEl.style.color = 'rgb(193 193 193)';
-            tpCaptionContainerEl.style.backgroundColor = 'black';
-            tpCaptionContainerEl.style.color = 'white';
-            tpProfileImageEl.style.border = '1px solid #6f6f6f';
-        }
+        // if (profiles[selectedProfileIndex].handle === '@TheSpaceFiles.1') {
+        //     tpUserDataEl.style.background = '#fbc117';
+        //     tpTopContainerEl.style.backgroundColor = '#fbc117';
+        //     tpTopContainerEl.style.background = '#fbc117';
+        //     tpUserDataEl.style.color = 'black';
+        //     tpProfileUsernameEl.style.color = '#656565';
+        //     postedAtEl.style.color = '#656565';
+        //     tpCaptionContainerEl.style.backgroundColor = '#fbc117';
+        //     tpCaptionContainerEl.style.color = 'black';
+        //     tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        // } else if (profiles[selectedProfileIndex].handle === '@DaaVinciFiles') {
+        //     tpUserDataEl.style.background = 'yellow';
+        //     tpTopContainerEl.style.backgroundColor = 'yellow';
+        //     tpTopContainerEl.style.background = 'yellow';
+        //     tpUserDataEl.style.color = 'black';
+        //     tpProfileUsernameEl.style.color = '#656565';
+        //     postedAtEl.style.color = '#656565';
+        //     tpCaptionContainerEl.style.backgroundColor = 'yellow';
+        //     tpCaptionContainerEl.style.color = 'black';
+        //     tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        // } else if (profiles[selectedProfileIndex].handle === '@Lets_Talk_Space') {
+        //     tpUserDataEl.style.background = 'black';
+        //     tpTopContainerEl.style.backgroundColor = 'black';
+        //     tpTopContainerEl.style.background = 'black';
+        //     tpUserDataEl.style.color = 'white';
+        //     tpProfileUsernameEl.style.color = 'rgb(193 193 193)';
+        //     postedAtEl.style.color = 'rgb(193 193 193)';
+        //     tpCaptionContainerEl.style.backgroundColor = 'black';
+        //     tpCaptionContainerEl.style.color = 'white';
+        //     tpProfileImageEl.style.border = '1px solid #6f6f6f';
+        // }
 
         if(isFullScreen()) {
             tpContainerEl.style.backgroundColor = '#000';
@@ -634,11 +628,11 @@ async function popupHandler() {
                 <div class="tp-profile-select">Switch profile</div>
                 <div class="tp-profile-options">
                     <div class="tp-option">
-                        <span class="tp-option-label">SpaceExploration</span>
+                        <span class="tp-option-label">The Space Files</span>
                         <input class="tp-option-radio" type="radio" name="switch-profile" value="0" ${selectedProfileIndex == 0 ? 'checked' : ''}>
                     </div>
                     <div class="tp-option">
-                        <span class="tp-option-label">Space Talk 101</span>
+                        <span class="tp-option-label">Daa Vinci Files</span>
                         <input class="tp-option-radio" type="radio" name="switch-profile" value="1" ${selectedProfileIndex == 1 ? 'checked' : ''}>
                     </div>
                     <div class="tp-option">
