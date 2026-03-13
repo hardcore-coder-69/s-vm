@@ -930,18 +930,18 @@ textarea {
 }
 
 .tp-name-username-cont {
-    font-size: 25px;
+    font-size: 17px;
     font-weight: 500;
     /* transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); */
 }
 
-.tp-name {
+/* .tp-name {
     transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-}
+} */
 
 .tp-username {
     color: #a5a5a5;
-    transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    /* transform: skewX(-10deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); */
 }
 
 .tp-just-now-dot {
