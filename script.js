@@ -7,7 +7,7 @@ const profiles = [
         index: 0,
         img: "./assets/channels4_profile_new_new.png",
         name: "The Space Files",
-        handle: "@TheSpaceFiles.1",
+        handle: "@the.space.files",
         postedAt: 'just after big bang'
     },
     {
