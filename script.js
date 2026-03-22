@@ -5,7 +5,7 @@ shockedSoundEffectEl.load();
 const profiles = [
     {
         index: 0,
-        img: "./assets/channels4_profile_new_new.png",
+        img: "./assets/dp.jpg",
         name: "The Space Files",
         handle: "@the.space.files",
         postedAt: 'just after big bang'
